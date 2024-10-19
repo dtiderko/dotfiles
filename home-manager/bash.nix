@@ -2,8 +2,8 @@
 {
   home.packages = with pkgs; [
     eza
-      btop
-      tree
+    btop
+    tree
   ];
 
   # fancy inputs
