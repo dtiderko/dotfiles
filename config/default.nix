@@ -21,6 +21,10 @@
   programs.gamemode.enable = true;
   services.printing.enable = true;
   networking.networkmanager.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 
   system = {
     inherit stateVersion;
