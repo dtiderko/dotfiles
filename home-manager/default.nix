@@ -10,6 +10,7 @@
     ./bash.nix
     ./fonts.nix
     ./git.nix
+    ./protonvpn.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
