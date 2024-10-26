@@ -46,16 +46,26 @@
         modules = [
           ./config
 
+          # install home manager
+          (
+            { pkgs, ... }:
+            {
+              environment.systemPackages = [
+                pkgs.home-manager
+              ];
+            }
+          )
+
           ##########################
           # change files if needed #
           ##########################
-        
+
           ############
           #     host #
           ############
 
           ./host/squid
-        
+          # ./host/kraken
 
           ###########################
           #     desktop environment #
@@ -84,11 +94,10 @@
 
           ./home-manager
 
-
           ##########################
           # change files if needed #
           ##########################
-        
+
           # hyprland rice
           # ./desktop-environment/hyprland/home-manager
         ];
