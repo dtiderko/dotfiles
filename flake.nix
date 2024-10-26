@@ -20,6 +20,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs =
@@ -45,27 +46,51 @@
         modules = [
           ./config
 
-          # change files if needed
+          ##########################
+          # change files if needed #
+          ##########################
+        
+          ############
+          #     host #
+          ############
 
           ./host/squid
+        
+
+          ###########################
+          #     desktop environment #
+          ###########################
+
           # if you have not yet built cosmic, run nixos-rebuild test with only
           # the cache added
-          # https://github.com/lilyinstarlight/nixos-cosmic
-          ./desktop-environment/cosmic
+          # ./desktop-environment/cosmic
+
+          # do not forget to enable the hyprland home-manager config
+          # ./desktop-environment/hyprland
 
           # ./desktop-environment/gnome
+
+          ./desktop-environment/gnome-cosmic
         ];
       };
 
       homeConfigurations.default = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit username stateVersion;
+          inherit username stateVersion inputs;
         };
         modules = [
           nixvim.homeManagerModules.default
 
           ./home-manager
+
+
+          ##########################
+          # change files if needed #
+          ##########################
+        
+          # hyprland rice
+          # ./desktop-environment/hyprland/home-manager
         ];
       };
     };
