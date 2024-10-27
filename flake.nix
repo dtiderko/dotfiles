@@ -100,7 +100,7 @@
 
           # hyprland rice
           # ./desktop-environment/hyprland/home-manager
-          
+
           # gnome rice
           ./desktop-environment/gnome/home-manager
         ];
