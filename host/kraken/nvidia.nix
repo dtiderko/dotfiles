@@ -18,4 +18,7 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
+  
+  # fix phantom display
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 }
