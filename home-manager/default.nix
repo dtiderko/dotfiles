@@ -30,6 +30,7 @@
       brave
       alacritty
       obsidian
+      spotify
 
       nextcloud-client
       keepassxc
@@ -37,6 +38,8 @@
       steam
       heroic
       vesktop
+      bottles
+      lutris
     ];
   };
 
