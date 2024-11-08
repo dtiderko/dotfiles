@@ -19,11 +19,20 @@
   programs.nix-ld.enable = true;
 
   programs.gamemode.enable = true;
-  services.printing.enable = true;
   networking.networkmanager.enable = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+
+  # printer/scanner
+  services.printing.enable = true;
+  hardware.sane = {
+    enable = true;
+    disabledDefaultBackends = [ "escl" ];
+    extraBackends = [
+      pkgs.sane-airscan
+    ];
   };
 
   system = {
@@ -40,6 +49,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "scanner"
+      "lp"
     ];
   };
 }
