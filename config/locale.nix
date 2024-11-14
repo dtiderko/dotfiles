@@ -1,5 +1,5 @@
 {
-  console.keyMap = "dvorak";
+  console.keyMap = "de";
   time.timeZone = "Europe/Berlin";
   i18n = {
     defaultLocale = "en_US.UTF-8";
