@@ -11,7 +11,10 @@
       }
     ];
 
-    extraConfig.gpg.format = "ssh";
+    extraConfig = {
+      gpg.format = "ssh";
+      pull.rebase = true;
+    };
     signing = {
       signByDefault = true;
       key = "~/.ssh/id_ed25519.pub";
