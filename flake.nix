@@ -34,54 +34,59 @@
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
       username = "dennis";
       stateVersion = "24.05";
+
+      modules = [
+        ./config
+
+        # install home manager
+        (
+          { pkgs, ... }:
+          {
+            environment.systemPackages = [
+              pkgs.home-manager
+            ];
+          }
+        )
+
+        ###########################
+        #     desktop environment #
+        ###########################
+
+        # if you have not yet built cosmic, run nixos-rebuild test with only
+        # the cache added
+        # ./desktop-environment/cosmic
+
+        # do not forget to enable the hyprland home-manager config
+        # ./desktop-environment/hyprland
+
+        # ./desktop-environment/gnome
+
+        ./desktop-environment/gnome-cosmic
+      ];
     in
     {
       formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".nixfmt-rfc-style;
 
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit username stateVersion inputs;
+      nixosConfigurations = {
+        kraken = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit username stateVersion inputs;
+          };
+          modules = [
+            ./host/kraken
+          ] ++ modules;
         };
-        modules = [
-          ./config
 
-          # install home manager
-          (
-            { pkgs, ... }:
-            {
-              environment.systemPackages = [
-                pkgs.home-manager
-              ];
-            }
-          )
-
-          ##########################
-          # change files if needed #
-          ##########################
-
-          ############
-          #     host #
-          ############
-
-          ./host/squid
-          # ./host/kraken
-
-          ###########################
-          #     desktop environment #
-          ###########################
-
-          # if you have not yet built cosmic, run nixos-rebuild test with only
-          # the cache added
-          # ./desktop-environment/cosmic
-
-          # do not forget to enable the hyprland home-manager config
-          # ./desktop-environment/hyprland
-
-          # ./desktop-environment/gnome
-
-          ./desktop-environment/gnome-cosmic
-        ];
+        squid = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit username stateVersion inputs;
+          };
+          modules = [
+            ./host/squid
+          ] ++ modules;
+        };
       };
 
       homeConfigurations.default = home-manager.lib.homeManagerConfiguration {
