@@ -13,7 +13,6 @@
 
     extraConfig = {
       gpg.format = "ssh";
-      pull.rebase = true;
     };
     signing = {
       signByDefault = true;
