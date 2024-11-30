@@ -9,11 +9,6 @@
     key = "<leader>pv";
     action = "<cmd>Oil --float<CR>";
   }
-  # open terminal
-  {
-    key = "<leader>t";
-    action = "<cmd>ToggleTerm<CR>";
-  }
 
   # exit terminal mode
   {
