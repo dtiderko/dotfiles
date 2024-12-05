@@ -37,7 +37,7 @@
 
       steam
       heroic
-      vesktop
+      discord-canary
       bottles
       lutris
     ];
