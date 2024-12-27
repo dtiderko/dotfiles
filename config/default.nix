@@ -42,6 +42,11 @@
     ];
   };
 
+  programs.ausweisapp = {
+    enable = true;
+    openFirewall = true;
+  };
+
   system = {
     inherit stateVersion;
     # automatic updates
