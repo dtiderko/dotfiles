@@ -11,6 +11,7 @@
     ./fonts.nix
     ./git.nix
     ./protonvpn.nix
+    ./discord
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -37,7 +38,6 @@
 
       steam
       heroic
-      discord-canary
       bottles
       lutris
     ];
