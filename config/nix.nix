@@ -10,6 +10,8 @@
     };
 
     settings = {
+      # 64 Mebibytes
+      extraOptions.download-buffer-size = 536870912;
       experimental-features = [
         "nix-command"
         "flakes"
