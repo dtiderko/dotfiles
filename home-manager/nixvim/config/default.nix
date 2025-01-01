@@ -21,4 +21,15 @@
     register = "unnamedplus";
     providers.xclip.enable = true;
   };
+
+  performance = {
+    combinePlugins.enable = true;
+    byteCompileLua = {
+      enable = true;
+      configs = true;
+      initLua = true;
+      nvimRuntime = true;
+      plugins = true;
+    };
+  };
 }

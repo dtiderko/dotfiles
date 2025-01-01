@@ -1,7 +1,7 @@
 {
   enable = true;
 
-  inlayHints = true;
+  # inlayHints = true;
 
   servers = {
     nixd.enable = true;

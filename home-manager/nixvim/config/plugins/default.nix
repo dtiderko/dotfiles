@@ -26,8 +26,9 @@
   cmp-path.enable = true;
   cmp-nvim-lsp.enable = true;
   luasnip.enable = true; # required by cmp
+  nix.enable = true;
 
   # rust
   rustaceanvim.enable = true;
-  crates-nvim.enable = true;
+  crates.enable = true;
 }
