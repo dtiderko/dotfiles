@@ -44,7 +44,8 @@
     }
   ];
 
-  boot.initrd.luks.devices."luks-0a5051d9-602a-4e3b-ac6d-415e7c045a5c".device = "/dev/disk/by-uuid/0a5051d9-602a-4e3b-ac6d-415e7c045a5c";
+  boot.initrd.luks.devices."luks-0a5051d9-602a-4e3b-ac6d-415e7c045a5c".device =
+    "/dev/disk/by-uuid/0a5051d9-602a-4e3b-ac6d-415e7c045a5c";
 
   networking = {
     hostName = "squid";
