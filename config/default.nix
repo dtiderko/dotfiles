@@ -17,6 +17,9 @@
 
   # allow running dynamically linked executables
   programs.nix-ld.enable = true;
+  
+  # allow running http server as normal user
+  boot.kernel.sysctl."net.ipv4.ip_unprivileged_port_start" = 0;
 
   programs.gamemode.enable = true;
   networking.networkmanager.enable = true;

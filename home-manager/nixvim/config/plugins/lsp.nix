@@ -11,6 +11,10 @@
     # c
     cmake.enable = true;
     clangd.enable = true;
+
+    # web
+    html.enable = true;
+    htmx.enable = true;
   };
 
   keymaps.lspBuf = {
