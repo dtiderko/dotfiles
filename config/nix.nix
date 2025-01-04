@@ -1,6 +1,9 @@
 {
   nixpkgs.config.allowUnfree = true;
   nix = {
+    # 64 Mebibytes
+    extraOptions = "download-buffer-size = 536870912";
+
     # nix store maintanaince
     settings.auto-optimise-store = true;
     gc = {
@@ -10,8 +13,6 @@
     };
 
     settings = {
-      # 64 Mebibytes
-      extraOptions.download-buffer-size = 536870912;
       experimental-features = [
         "nix-command"
         "flakes"
