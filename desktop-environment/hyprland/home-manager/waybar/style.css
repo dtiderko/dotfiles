@@ -11,15 +11,13 @@ window#waybar {
   background: transparent;
 }
 
-
 #workspaces,
 #clock#calendar,
 #clock,
 #pulseaudio,
 #network,
 #tray,
-#custom-powermenu
-{
+#custom-powermenu {
   margin-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -28,7 +26,6 @@ window#waybar {
   border: 2px solid @mantle;
   background-color: @background;
 }
-
 
 #workspaces {
   margin-left: 10px;

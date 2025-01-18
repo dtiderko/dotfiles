@@ -7,5 +7,5 @@
     fd
   ];
 
-  programs.nixvim = import ./config;
+  programs.nixvim = (import ./config pkgs);
 }

@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
@@ -25,15 +26,26 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       nixvim,
+      treefmt-nix,
       ...
     }@inputs:
     let
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
       username = "dennis";
       stateVersion = "24.05";
+      treefmt-config = (
+        treefmt-nix.lib.evalModule pkgs {
+          projectRootFile = "flake.nix";
+          programs = {
+            nixfmt.enable = true; # nix
+            shfmt.enable = true; # shell files
+          };
+        }
+      );
 
       modules = [
         ./config
@@ -65,7 +77,8 @@
       ];
     in
     {
-      formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".nixfmt-rfc-style;
+      formatter."x86_64-linux" = treefmt-config.config.build.wrapper;
+      checks."x86_64-linux".formatting = treefmt-config.config.build.check self;
 
       nixosConfigurations = {
         kraken = nixpkgs.lib.nixosSystem {

@@ -1,9 +1,14 @@
+{ pkgs, ... }:
 {
   plugins = import ./plugins;
   opts = import ./opts.nix;
   keymaps = import ./keymaps.nix;
 
   enable = true;
+
+  extraPlugins = [
+    pkgs.vimPlugins.asyncrun-vim
+  ];
 
   colorschemes.gruvbox.enable = true;
   extraConfigLua = ''

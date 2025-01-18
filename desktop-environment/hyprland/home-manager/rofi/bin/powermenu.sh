@@ -4,13 +4,14 @@ sleep="󰤄 Suspend"
 reboot=" Reboot"
 shutdown="󰐥 Poweroff"
 
-selected_option=$(echo "$sleep
+selected_option=$(
+  echo "$sleep
 $reboot
 $shutdown" | rofi \
-	-dmenu \
-	-i \
-	-p "Powermenu" \
-	-theme "~/.config/rofi/theme/powermenu.rasi"
+    -dmenu \
+    -i \
+    -p "Powermenu" \
+    -theme "~/.config/rofi/theme/powermenu.rasi"
 )
 
 case $selected_option in
