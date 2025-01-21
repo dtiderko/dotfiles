@@ -8,17 +8,12 @@
       modesetting.enable = true;
       powerManagement = {
         enable = true;
-        finegrained = false;
       };
 
-      # open source kernel module
-      open = false;
+      open = true;
       nvidiaSettings = true;
 
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
-
-  # fix phantom display
-  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 }
