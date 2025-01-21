@@ -18,9 +18,12 @@
   treesitter = import ./treesitter.nix;
   harpoon = import ./harpoon.nix;
   neogit.enable = true;
+  guess-indent.enable = true;
+  which-key.enable = true;
 
   # lsp
   lsp = import ./lsp.nix;
+  lsp-format.enable = true;
   cmp = import ./cmp.nix;
   cmp-buffer.enable = true;
   cmp-path.enable = true;

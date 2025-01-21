@@ -10,16 +10,6 @@
     action = "<cmd>Oil --float<CR>";
   }
 
-  # format
-  {
-    key = "<leader>fm";
-    action = "<cmd>:AsyncRun nix fmt<CR>";
-  }
-  {
-    key = "<leader>fmo";
-    action = "<cmd>:copen<CR>";
-  }
-
   # exit terminal mode
   {
     mode = "t";
