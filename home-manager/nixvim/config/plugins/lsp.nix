@@ -3,6 +3,7 @@
 
   servers = {
     nixd.enable = true;
+    bashls.enable = true;
     zls.enable = true;
     pyright.enable = true;
 

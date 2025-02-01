@@ -24,11 +24,12 @@
   # lsp
   lsp = import ./lsp.nix;
   lsp-format.enable = true;
-  cmp = import ./cmp.nix;
-  cmp-buffer.enable = true;
-  cmp-path.enable = true;
-  cmp-nvim-lsp.enable = true;
-  luasnip.enable = true; # required by cmp
+  # cmp = import ./cmp.nix;
+  # cmp-buffer.enable = true;
+  # cmp-path.enable = true;
+  # cmp-nvim-lsp.enable = true;
+  # luasnip.enable = true; # required by cmp
+  blink-cmp = import ./blink-cmp.nix;
   nix.enable = true;
 
   # rust
