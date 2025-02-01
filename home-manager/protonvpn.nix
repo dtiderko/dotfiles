@@ -6,6 +6,8 @@
   ];
 
   home.activation.startNetworkmanagerapplet = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
-    nm-applet
+    if command -v nm-applet 2>&1 >/dev/null; then
+      nm-applet
+    fi
   '';
 }
