@@ -57,7 +57,21 @@
     # automatic updates
     autoUpgrade = {
       enable = true;
-      dates = "daily";
+      dates = "04:40";
+      flake = inputs.self.outPath;
+      flags = [
+        "--print-build-logs"
+        "--commit-lock-file"
+
+        "--update-input"
+        "nixpkgs"
+
+        "--update-input"
+        "autocpufreq"
+
+        "--update-input"
+        "nixos-cosmic"
+      ];
     };
   };
 
