@@ -2,6 +2,7 @@
   pkgs,
   username,
   stateVersion,
+  inputs,
   ...
 }:
 {
@@ -45,12 +46,15 @@
     ];
   };
 
-  programs.ausweisapp = {
-    enable = true;
-    openFirewall = true;
+  services.flatpak.enable = true;
+  programs = {
+    ausweisapp = {
+      enable = true;
+      openFirewall = true;
+    };
+    adb.enable = true;
+    java.enable = true;
   };
-
-  programs.adb.enable = true;
 
   system = {
     inherit stateVersion;
