@@ -12,6 +12,7 @@
     ./git.nix
     ./protonvpn.nix
     ./discord
+    ./syncthing.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -33,7 +34,6 @@
       obsidian
       spotify
 
-      nextcloud-client
       keepassxc
 
       steam
