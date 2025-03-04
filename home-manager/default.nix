@@ -11,7 +11,6 @@
     ./fonts.nix
     ./git.nix
     ./protonvpn.nix
-    ./discord
     ./syncthing.nix
   ];
 
