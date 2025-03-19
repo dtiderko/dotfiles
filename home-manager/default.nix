@@ -12,6 +12,7 @@
     ./git.nix
     ./protonvpn.nix
     ./syncthing.nix
+    ./alacritty.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -29,7 +30,6 @@
 
     packages = with pkgs; [
       brave
-      alacritty
       obsidian
       spotify
 
