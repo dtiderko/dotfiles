@@ -16,12 +16,7 @@
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   '';
 
-  globals = {
-    mapleader = " ";
-
-    # zig shall not autoformat my files
-    zig_fmt_autosave = 0;
-  };
+  globals.mapleader = " ";
   clipboard = {
     register = "unnamedplus";
     providers.xclip.enable = true;
