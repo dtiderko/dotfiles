@@ -24,7 +24,7 @@
   };
   clipboard = {
     register = "unnamedplus";
-    providers.wl-copy.enable = true;
+    providers.xclip.enable = true;
   };
 
   performance = {
