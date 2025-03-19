@@ -13,9 +13,6 @@
     ./locale.nix
   ];
 
-  # use the latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # allow running dynamically linked executables
   programs.nix-ld.enable = true;
 
