@@ -28,7 +28,6 @@
   };
 
   performance = {
-    combinePlugins.enable = true;
     byteCompileLua = {
       enable = true;
       configs = true;
