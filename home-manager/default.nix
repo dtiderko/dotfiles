@@ -33,6 +33,7 @@
       obsidian
       spotify
 
+      usbimager
       keepassxc
 
       steam
