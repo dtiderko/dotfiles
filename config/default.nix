@@ -52,6 +52,9 @@
     java.enable = true;
   };
 
+  virtualisation.waydroid.enable = true;
+  environment.systemPackages =  [ pkgs.wl-clipboard ];
+
   system = {
     inherit stateVersion;
     # automatic updates
