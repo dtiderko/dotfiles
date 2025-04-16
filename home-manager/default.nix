@@ -10,7 +10,6 @@
     ./bash.nix
     ./fonts.nix
     ./git.nix
-    ./protonvpn.nix
     ./syncthing.nix
     ./alacritty.nix
   ];
@@ -32,6 +31,7 @@
       brave
       obsidian
       spotify
+      vlc
 
       usbimager
       keepassxc
