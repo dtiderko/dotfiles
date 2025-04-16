@@ -23,7 +23,11 @@
   # lsp
   lsp = import ./lsp.nix;
   lsp-format.enable = true;
-  coq-nvim = import ./coq-nvim.nix;
+  cmp = import ./cmp.nix;
+  cmp-buffer.enable = true;
+  cmp-path.enable = true;
+  cmp-nvim-lsp.enable = true;
+  luasnip.enable = true; # required by cmp
   nix.enable = true;
 
   # rust
