@@ -20,6 +20,8 @@
   boot.kernel.sysctl."net.ipv4.ip_unprivileged_port_start" = 0;
 
   networking.networkmanager.enable = true;
+
+  # graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -51,9 +53,6 @@
     adb.enable = true;
     java.enable = true;
   };
-
-  virtualisation.waydroid.enable = true;
-  environment.systemPackages =  [ pkgs.wl-clipboard ];
 
   system = {
     inherit stateVersion;
