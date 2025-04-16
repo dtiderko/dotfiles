@@ -16,7 +16,6 @@
   web-devicons.enable = true;
   oil = import ./oil.nix;
   treesitter = import ./treesitter.nix;
-  harpoon = import ./harpoon.nix;
   neogit.enable = true;
   guess-indent.enable = true;
   which-key.enable = true;

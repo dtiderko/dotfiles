@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./harpoon.nix
+  ];
+
   plugins = import ./plugins;
   opts = import ./opts.nix;
   keymaps = import ./keymaps.nix;

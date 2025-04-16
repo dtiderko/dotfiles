@@ -16,6 +16,12 @@
     key = "<esc>";
     action = "<C-\\><C-n>";
   }
+  # open terminal
+  {
+    mode = "n";
+    key = "<leader>t";
+    action = "<cmd>belowright vert ter<CR>";
+  }
 
   # previous buffer
   {
