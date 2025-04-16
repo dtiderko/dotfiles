@@ -6,10 +6,7 @@
   ...
 }:
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-    ./nvidia.nix
-  ];
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   boot = {
     kernelModules = [ "kvm-amd" ];
@@ -62,5 +59,11 @@
     enable = true;
     package = pkgs.openrgb-with-all-plugins;
     motherboard = "amd";
+  };
+
+  environment.systemPackages = [ pkgs.lact ];
+  systemd = {
+    packages = [ pkgs.lact ];
+    services.lactd.wantedBy = [ "multi-user.target" ];
   };
 }
