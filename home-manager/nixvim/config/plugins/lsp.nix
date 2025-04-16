@@ -14,6 +14,10 @@
     # web
     html.enable = true;
     htmx.enable = true;
+
+    # config
+    taplo.enable = true; # toml
+    jsonls.enable = true;
   };
 
   keymaps.lspBuf = {
