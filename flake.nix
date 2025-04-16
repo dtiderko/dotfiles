@@ -16,10 +16,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs =
@@ -51,16 +48,14 @@
         #     desktop environment #
         ###########################
 
-        # if you have not yet built cosmic, run nixos-rebuild test with only
-        # the cache added
         # ./desktop-environment/cosmic
 
         # do not forget to enable the hyprland home-manager config
         # ./desktop-environment/hyprland
 
-        ./desktop-environment/gnome
+        # ./desktop-environment/gnome
 
-        # ./desktop-environment/gnome-cosmic
+        ./desktop-environment/gnome-cosmic
       ];
     in
     {
