@@ -10,6 +10,7 @@
   programs.starship.enable = true;
   programs.bash = {
     enable = true;
+    historyControl = ["ignoredups"];
 
     shellAliases = {
       vi = "nvim .";
