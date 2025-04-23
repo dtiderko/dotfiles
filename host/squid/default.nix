@@ -8,6 +8,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./power-management.nix
+    ./fingerprint.nix
   ];
 
   boot = {
