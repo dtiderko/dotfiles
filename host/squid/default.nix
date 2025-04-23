@@ -24,11 +24,11 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/338e5305-c64a-4d52-992b-d5bdd5f43c23";
+      device = "/dev/disk/by-uuid/0b8922b7-db15-42a5-952b-bc9ba91ce9f2";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/55CD-7BCC";
+      device = "/dev/disk/by-id/nvme-eui.00253857019ea53e-part1";
       fsType = "vfat";
       options = [
         "fmask=0077"
@@ -39,13 +39,11 @@
 
   swapDevices = [
     {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
+      device = "/dev/disk/by-id/nvme-eui.00253857019ea53e-part3";
     }
   ];
 
-  boot.initrd.luks.devices."luks-0a5051d9-602a-4e3b-ac6d-415e7c045a5c".device =
-    "/dev/disk/by-uuid/0a5051d9-602a-4e3b-ac6d-415e7c045a5c";
+  boot.initrd.luks.devices."luks-a54ca87b-7097-44c7-9795-3a35b9eca708".device = "/dev/disk/by-uuid/a54ca87b-7097-44c7-9795-3a35b9eca708";
 
   networking = {
     hostName = "squid";
