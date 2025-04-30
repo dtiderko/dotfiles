@@ -16,11 +16,10 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nixvim,
-      ...
+    { nixpkgs
+    , home-manager
+    , nixvim
+    , ...
     }@inputs:
     let
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -41,22 +40,10 @@
           }
         )
 
-        ###########################
-        #     desktop environment #
-        ###########################
-
-        # ./desktop-environment/cosmic
-
-        # do not forget to enable the hyprland home-manager config
-        # ./desktop-environment/hyprland
-
-        # ./desktop-environment/gnome
-
-        ./desktop-environment/gnome-cosmic
       ];
     in
     {
-      formatter = pkgs.nixpkgs-fmt;
+      formatter."x86_64-linux" = pkgs.nixpkgs-fmt;
 
       nixosConfigurations = {
         kraken = nixpkgs.lib.nixosSystem {
@@ -89,16 +76,7 @@
           nixvim.homeManagerModules.default
 
           ./home-manager
-
-          ##########################
-          # change files if needed #
-          ##########################
-
-          # hyprland rice
-          # ./desktop-environment/hyprland/home-manager
-
-          # gnome rice
-          ./desktop-environment/gnome/home-manager
+          ./desktop-environment/home-manager
         ];
       };
     };
