@@ -27,18 +27,19 @@
     };
 
     profileExtra = ''
-      # disable logging for direnv
-      export DIRENV_LOG_FORMAT=
-
       # added by Nix installer
       if [ -e /home/dennis/.nix-profile/etc/profile.d/nix.sh ]; then
         . $HOME/.nix-profile/etc/profile.d/nix.sh
       fi
+
+      mkdir -p $HOME/.local/bin
+      PATH=$PATH:$HOME/.local/bin
     '';
   };
 
   programs.direnv = {
     enable = true;
+    silent = true;
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
