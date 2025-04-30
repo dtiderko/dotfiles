@@ -31,6 +31,9 @@
   nix.enable = true;
 
   # rust
-  rustaceanvim.enable = true;
   crates.enable = true;
+
+  # improving my vim motions
+  hardtime.enable = true;
+  vim-be-good.enable = true;
 }
