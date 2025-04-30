@@ -40,6 +40,7 @@
       heroic
       bottles
       lutris
+      prismlauncher
       sidequest
     ];
   };
