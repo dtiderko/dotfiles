@@ -20,7 +20,7 @@
   {
     mode = "n";
     key = "<leader>t";
-    action = "<cmd>belowright vert ter<CR>";
+    action = "<cmd>:term<CR>";
   }
 
   # previous buffer
