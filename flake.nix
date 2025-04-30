@@ -7,16 +7,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs =
@@ -33,6 +29,7 @@
 
       modules = [
         ./config
+        ./desktop-environment
 
         # install home manager
         (
