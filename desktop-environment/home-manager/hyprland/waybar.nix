@@ -32,7 +32,6 @@ in
           tooltip = false;
         };
         "clock" = {
-          format = "<span color='#${colors.base05}'> </span>{:%H:%M}";
           tooltip = false;
         };
 
