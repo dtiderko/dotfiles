@@ -49,7 +49,7 @@ in
       input = {
         kb_layout = "de,us";
         kb_variant = "qwerty,dvorak";
-        kb_options = "grp:alt_shift_toggle";
+        kb_options = "grp:caps_toggle";
 
         follow_mouse = 1;
         touchpad.natural_scroll = false;
