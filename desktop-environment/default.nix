@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland.nix
+    # ./hyprland.nix
     ./gnome.nix
     ./cosmic.nix
   ];
