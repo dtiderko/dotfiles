@@ -85,11 +85,17 @@ in
           "$mod, Q, killactive"
           "$mod, V, togglefloating"
 
-          # move window with mod + arrowkeys
+          # move to window with mod + arrowkeys
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+
+          # move window with mod + arrowkeys
+          "$mod SHIFT, left, movewindow, l"
+          "$mod SHIFT, right, movewindow, r"
+          "$mod SHIFT, up, movetoworkspace, e-1"
+          "$mod SHIFT, down, movetoworkspace, e+1"
 
           # apps
           "$mod, T, exec, alacritty"
