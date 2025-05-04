@@ -19,6 +19,8 @@
   boot.kernel.sysctl."net.ipv4.ip_unprivileged_port_start" = 0;
 
   networking.networkmanager.enable = true;
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
 
   # graphics
   hardware.graphics = {

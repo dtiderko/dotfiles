@@ -6,16 +6,16 @@
       efi.canTouchEfiVariables = true;
     };
 
-    # boot animation
-    plymouth = {
-      enable = true;
-      theme = "rings";
-      themePackages = [
-        (pkgs.adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
-        })
-      ];
-    };
+    # # boot animation
+    # plymouth = {
+    #   enable = true;
+    #   theme = "rings";
+    #   themePackages = [
+    #     (pkgs.adi1090x-plymouth-themes.override {
+    #       selected_themes = [ "rings" ];
+    #     })
+    #   ];
+    # };
 
     # enable silent boot
     consoleLogLevel = 0;
@@ -29,6 +29,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
+
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
