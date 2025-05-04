@@ -31,6 +31,7 @@
       obsidian
       spotify
       vlc
+      feishin
 
       usbimager
       keepassxc
