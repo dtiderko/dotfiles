@@ -23,7 +23,8 @@
   globals.mapleader = " ";
   clipboard = {
     register = "unnamedplus";
-    providers.xclip.enable = true;
+    # providers.xclip.enable = true;
+    providers.wl-copy.enable = true;
   };
 
   performance = {

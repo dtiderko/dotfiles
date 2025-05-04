@@ -1,6 +1,6 @@
 {
   # quality-of-life
-  auto-save.enable = true;
+  # auto-save.enable = true;
   comment.enable = true;
   nvim-autopairs.enable = true;
 

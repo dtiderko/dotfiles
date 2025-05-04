@@ -25,6 +25,12 @@
     # config
     taplo.enable = true; # toml
     jsonls.enable = true;
+
+    # haskell
+    hls = {
+      enable = true;
+      installGhc = false;
+    };
   };
 
   keymaps.lspBuf = {
