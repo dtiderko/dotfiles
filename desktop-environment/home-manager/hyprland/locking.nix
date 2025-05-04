@@ -26,7 +26,7 @@
           # 5.5 min screen off
           timeout = 300;
           on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on && brightnessctl - r";
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
         }
         {
           # 30 min suspend
