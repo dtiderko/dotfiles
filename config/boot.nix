@@ -6,6 +6,9 @@
       efi.canTouchEfiVariables = true;
     };
 
+    # latest kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
     # # boot animation
     # plymouth = {
     #   enable = true;
