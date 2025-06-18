@@ -26,16 +26,55 @@
       username = "dennis";
       stateVersion = "24.05";
 
+      rebuild = pkgs.writeShellScriptBin "rebuild" ''
+        case $1 in
+          "system")
+            echo "Root privilages will be required."
+            sudo echo "Root privilages have been successfully acquired."
+            echo
+
+            echo "> Updating system"
+            echo
+            sudo nixos-rebuild switch --flake /home/${username}/dotfiles
+          ;;
+          "home")
+            echo "> Updating home"
+            echo
+            home-manager switch --flake /home/${username}/dotfiles#default
+          ;;
+          *)
+            echo "Invaild argument! Use one of the following:"
+            echo "- `system`"
+            echo "- `home`"
+          ;;
+        esac
+      '';
+      update = pkgs.writeShellScriptBin "update" ''
+        echo "Root privilages will be required."
+        sudo echo "Root privilages have been successfully acquired."
+        echo
+
+        echo "> Starting full update"
+        echo "> Updating inputs..."
+        echo
+        nix flake update --flake /home/${username}/dotfiles/
+
+        ${rebuild}/bin/rebuild system
+        echo
+        ${rebuild}/bin/rebuild home
+      '';
+
       modules = [
         ./config
         ./desktop-environment
 
-        # install home manager
         (
           { pkgs, ... }:
           {
             environment.systemPackages = [
               pkgs.home-manager
+              rebuild
+              update
             ];
           }
         )
