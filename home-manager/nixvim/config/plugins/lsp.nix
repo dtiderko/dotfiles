@@ -33,15 +33,21 @@
     };
   };
 
-  keymaps.lspBuf = {
-    "gd" = "definition";
-    "gD" = "references";
-    "gs" = "signature_help";
-    "gi" = "implementation";
-    "gt" = "type_definition";
-    "K" = "hover";
-    "<space>rn" = "rename";
-    "<space>a" = "code_action";
-    "<space>fm" = "format";
+  keymaps = {
+    diagnostic = {
+      "<leader>j" = "goto_next";
+      "<leader>k" = "goto_prev";
+    };
+    lspBuf = {
+      "gd" = "definition";
+      "gD" = "references";
+      "gs" = "signature_help";
+      "gi" = "implementation";
+      "gt" = "type_definition";
+      "K" = "hover";
+      "<leader>rn" = "rename";
+      "<leader>a" = "code_action";
+      "<leader>fm" = "format";
+    };
   };
 }
