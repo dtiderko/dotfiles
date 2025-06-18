@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   services.desktopManager.gnome.enable = true;
+  services.xserver.enable = true;
 
   # exclude gnome apps
   environment.gnome.excludePackages = with pkgs; [
