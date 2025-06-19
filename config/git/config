@@ -1,0 +1,20 @@
+[include]
+  path = ~/coding/.gitconfig
+
+[includeIf "gitdir:~/coding/uni/**"]
+  path = ~/coding/uni/.gitconfig
+
+[commit]
+  gpgSign = true
+
+[gpg]
+  format = "ssh"
+
+[gpg "opengpg"]
+  program = /usr/bin/gpg
+
+[tag]
+  gpgSign = true
+
+[user]
+  signingKey = ~/.ssh/id_ed25519.pub
