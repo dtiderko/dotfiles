@@ -1,7 +1,7 @@
 # dotfiles
 
-My personal dotfiles for a normal linux system.
-My dotfiles for system using nix or nixos are inside the `nix branch`.
+My personal dotfiles for a normal linux system. \
+My dotfiles for a system using nix or nixos are inside the `nix branch`.
 
 ## Requirements
 

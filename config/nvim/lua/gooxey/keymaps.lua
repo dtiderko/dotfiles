@@ -1,4 +1,3 @@
-
 -- terminal
 vim.keymap.set("n", "<leader>t", vim.cmd.term)
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
