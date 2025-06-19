@@ -105,7 +105,12 @@ require("lazy").setup({
       "mason-org/mason-lspconfig.nvim",
       dependencies = {
         { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
+        {
+          "neovim/nvim-lspconfig",
+          dependencies = {
+            { "lukas-reineke/lsp-format.nvim", opts = {} }
+          },
+        },
       },
       opts = {},
     },
