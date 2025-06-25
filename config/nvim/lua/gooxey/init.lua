@@ -123,6 +123,7 @@ require("lazy").setup({
       },
       opts = {},
     },
+  },
 })
 
 require("gooxey.opts")
