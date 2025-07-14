@@ -28,7 +28,10 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- Setup lazy.nvim
 require("lazy").setup({
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
   spec = {
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
 
