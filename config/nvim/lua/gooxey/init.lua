@@ -101,6 +101,13 @@ require("lazy").setup({
         "sindrets/diffview.nvim",
         "nvim-telescope/telescope.nvim",
       },
+      config = true,
+    },
+    {
+      "kevinhwang91/nvim-ufo",
+      dependencies = {
+        "kevinhwang91/promise-async",
+      },
     },
 
     -- lsp
