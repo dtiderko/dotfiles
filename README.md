@@ -5,6 +5,7 @@ My dotfiles for a system using nix or nixos are inside the `nix branch`.
 
 ## Requirements
 
+- neovim (nightly)
 - cmake
 - make
 - ripgrep
@@ -13,7 +14,7 @@ My dotfiles for a system using nix or nixos are inside the `nix branch`.
 - fd
 - perl
 - pip
-    - neovim
+    - neovim (nightly)
 
 ## Installation
 

@@ -28,6 +28,9 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undofile = true           -- build-in persistent undo
+vim.opt.undofile = true -- build-in persistent undo
 
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
+
+vim.o.signcolumn = "yes"
+vim.o.winborder = "rounded"

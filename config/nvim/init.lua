@@ -1,1 +1,1 @@
-require("gooxey")
+require("dtiderko")
