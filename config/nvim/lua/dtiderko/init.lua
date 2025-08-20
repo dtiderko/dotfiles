@@ -44,4 +44,13 @@ require("todo-comments").setup()
 --                            Auto update plugins                            --
 -------------------------------------------------------------------------------
 
-vim.pack.update(vim.pack.get(), { force = true })
+vim.pack.update(
+	(function()
+		local p = {}
+		for _, v in pairs(vim.pack.get()) do
+			table.insert(p, v.spec.name)
+		end
+		return p
+	end)(),
+	{ force = true }
+)
