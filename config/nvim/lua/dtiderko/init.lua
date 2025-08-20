@@ -39,18 +39,3 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 })
 require("todo-comments").setup()
-
--------------------------------------------------------------------------------
---                            Auto update plugins                            --
--------------------------------------------------------------------------------
-
-vim.pack.update(
-	(function()
-		local p = {}
-		for _, v in pairs(vim.pack.get()) do
-			table.insert(p, v.spec.name)
-		end
-		return p
-	end)(),
-	{ force = true }
-)
