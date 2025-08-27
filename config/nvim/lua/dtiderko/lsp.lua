@@ -1,9 +1,14 @@
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/lukas-reineke/lsp-format.nvim",
+
+	-- mason stuff
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+
+	-- special lsps
+	"https://github.com/mrcjkb/haskell-tools.nvim",
 })
 
 local lsp_servers = {
@@ -16,7 +21,6 @@ local lsp_servers = {
 	"html",
 	"htmx",
 	"jsonls",
-	"hls",
 	"lua_ls",
 }
 
@@ -31,6 +35,10 @@ require("mason-tool-installer").setup({
 		"docformatter",
 
 		"stylua", -- lua
+
+		-- haskell
+		"haskell-language-server",
+		"fourmolu",
 
 		table.unpack(lsp_servers),
 	},

@@ -13,6 +13,7 @@ My dotfiles for a system using nix or nixos are inside the `nix branch`.
 - luarocks
 - fd
 - perl
+- [cabal-gild](https://github.com/tfausak/cabal-gild)
 - pip
     - neovim (nightly)
 
