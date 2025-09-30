@@ -4,6 +4,7 @@
     ./boot.nix
     ./desktop-environment.nix
     ./dotfiles-programs.nix
+    ./fonts.nix
     ./hardware-configuration.nix
     ./locale.nix
     ./nix.nix
