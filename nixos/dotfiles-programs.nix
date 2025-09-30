@@ -45,6 +45,7 @@
     php84Packages.composer
     php
     julia
+    wayclip
   ];
 
   programs.direnv = {
