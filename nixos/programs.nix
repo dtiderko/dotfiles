@@ -22,6 +22,11 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
+    overrideFolders = false;
+    overrideDevices = false;
+    user = "dennis";
+    group = "users";
+    dataDir = "/home/dennis/";
   };
 
   environment.systemPackages = with pkgs; [
