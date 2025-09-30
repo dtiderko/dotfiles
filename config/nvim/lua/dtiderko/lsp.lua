@@ -40,7 +40,7 @@ require("mason-tool-installer").setup({
 		"haskell-language-server",
 		"fourmolu",
 
-		table.unpack(lsp_servers),
+		unpack(lsp_servers),
 	},
 })
 

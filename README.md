@@ -2,8 +2,7 @@
 
 My personal dotfiles for both nixos and normal linux.
 
-Nixos is configured for the user `dennis`. This can be changed in the
-`nixos/configuration.nix` file.
+Nixos is configured for the user `dennis`.
 
 ## Requirements
 
@@ -23,7 +22,7 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - direnv
     - (optional) nix-direnv
     - eza
-- for the neovim stuff
+- for the neovim stuff (some stuff in here is optional but you have to decide)
     - neovim nightly
     - cmake
     - gnumake
@@ -32,9 +31,24 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - luajitPackages.luarocks
     - fd
     - perl
+    - python313
     - python313Packages.pip
     - python313Packages.pynvim
     - haskellPackages.cabal-gild
+    - haskellPackages.hoogle
+    - haskellPackages.fast-tags
+    - unzip
+    - wget
+    - gcc
+    - nodejs_24
+    - tree-sitter
+    - ruby
+    - mercurial
+    - go
+    - cargo
+    - php84Packages.composer
+    - php
+    - julia
 
 ## Installation
 

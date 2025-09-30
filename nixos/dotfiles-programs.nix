@@ -27,9 +27,24 @@
     luajitPackages.luarocks
     fd
     perl
+    python313
     python313Packages.pip
     python313Packages.pynvim
     haskellPackages.cabal-gild
+    haskellPackages.hoogle
+    haskellPackages.fast-tags
+    unzip
+    wget
+    gcc
+    nodejs_24
+    tree-sitter
+    ruby
+    mercurial
+    go
+    cargo
+    php84Packages.composer
+    php
+    julia
   ];
 
   programs.direnv = {
