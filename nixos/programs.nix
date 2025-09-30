@@ -9,6 +9,7 @@
     adb.enable = true;
     chromium.enable = true;
     java.enable = true;
+    thunderbird.enable = true;
   };
 
   # steam stuff
@@ -37,9 +38,11 @@
     # app
     brave
     obsidian
-    spotify
     vlc
+    spotify
     feishin
+    plexamp
+    gnome-calendar
 
     # utils
     usbimager
