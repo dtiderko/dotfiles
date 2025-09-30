@@ -1,5 +1,10 @@
 {
   console.keyMap = "de";
+  services.xserver.xkb = {
+    layout = "de";
+    variant = "";
+  };
+
   time.timeZone = "Europe/Berlin";
   i18n = {
     defaultLocale = "en_US.UTF-8";
