@@ -1,6 +1,7 @@
 {
   services = {
-    displayManager.cosmic-greeter.enable = true;
+    xserver.enable = true;
+    xserver.displayManager.gdm.enable = true;
     desktopManager.cosmic.enable = true;
   };
 }
