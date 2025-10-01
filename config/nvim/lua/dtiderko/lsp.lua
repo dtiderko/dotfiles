@@ -2,11 +2,6 @@ vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/lukas-reineke/lsp-format.nvim",
 
-	-- mason stuff
-	"https://github.com/mason-org/mason.nvim",
-	"https://github.com/mason-org/mason-lspconfig.nvim",
-	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
-
 	-- special lsps
 	"https://github.com/mrcjkb/haskell-tools.nvim",
 })
@@ -18,31 +13,15 @@ local lsp_servers = {
 	"rust_analyzer",
 	"cmake",
 	"clangd",
+	"cssls",
 	"html",
 	"htmx",
 	"jsonls",
 	"lua_ls",
+	"nixd",
 }
 
 require("lsp-format").setup()
-require("mason").setup()
-require("mason-tool-installer").setup({
-	auto_update = true,
-	ensure_installed = {
-		-- python
-		"black",
-		"isort",
-		"docformatter",
-
-		"stylua", -- lua
-
-		-- haskell
-		"haskell-language-server",
-		"fourmolu",
-
-		unpack(lsp_servers),
-	},
-})
 
 vim.lsp.enable(lsp_servers)
 vim.api.nvim_create_autocmd("LspAttach", {
