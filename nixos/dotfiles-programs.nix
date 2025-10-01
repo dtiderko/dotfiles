@@ -25,7 +25,7 @@
     gcc
     nodejs_24
     tree-sitter
-    wayclip
+    wl-clipboard
     #     extra formatter
     python313Packages.black
     python313Packages.isort
