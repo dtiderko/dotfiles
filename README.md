@@ -22,33 +22,26 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - direnv
     - (optional) nix-direnv
     - eza
-- for the neovim stuff (some stuff in here is optional but you have to decide)
-    - neovim nightly
-    - cmake
-    - gnumake
+- for the neovim stuff (this is just a guideline / the stuff I install globally)
+    - neovim (nightly)
     - ripgrep
-    - lua5_4_compat
-    - luajitPackages.luarocks
     - fd
-    - perl
-    - python313
-    - python313Packages.pip
-    - python313Packages.pynvim
-    - haskellPackages.cabal-gild
-    - haskellPackages.hoogle
-    - haskellPackages.fast-tags
-    - unzip
-    - wget
     - gcc
     - nodejs_24
     - tree-sitter
-    - ruby
-    - mercurial
-    - go
-    - cargo
-    - php84Packages.composer
-    - php
-    - julia
+    - wl-clipboard
+    - extra formatter
+        - python313Packages.black
+        - python313Packages.isort
+        - python313Packages.docformatter
+        - stylua
+    - lsp
+        - bash-language-server
+        - cmake-language-server
+        - vscode-langservers-extracted
+        - htmx-lsp
+        - lua-language-server
+        - nixd
 
 ## Installation
 
