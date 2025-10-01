@@ -27,16 +27,16 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -------------------------------------------------------------------------------
 
 vim.pack.add({
-	"https://github.com/windwp/nvim-autopairs",
-	"https://github.com/lukas-reineke/indent-blankline.nvim",
-	"https://github.com/RRethy/vim-illuminate",
+  "https://github.com/windwp/nvim-autopairs",
+  "https://github.com/lukas-reineke/indent-blankline.nvim",
+  "https://github.com/RRethy/vim-illuminate",
 })
 require("nvim-autopairs").setup()
 require("ibl").setup()
 
 vim.pack.add({
-	"https://github.com/folke/todo-comments.nvim",
-	"https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/folke/todo-comments.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
 })
 require("todo-comments").setup()
 
