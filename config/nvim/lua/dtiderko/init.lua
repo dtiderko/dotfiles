@@ -39,3 +39,12 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 })
 require("todo-comments").setup()
+
+-------------------------------------------------------------------------------
+--                                 Provider                                  --
+-------------------------------------------------------------------------------
+
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
