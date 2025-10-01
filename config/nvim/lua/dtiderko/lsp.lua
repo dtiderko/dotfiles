@@ -1,9 +1,6 @@
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/lukas-reineke/lsp-format.nvim",
-
-	-- special lsps
-	"https://github.com/mrcjkb/haskell-tools.nvim",
 })
 
 local lsp_servers = {
@@ -19,6 +16,7 @@ local lsp_servers = {
 	"jsonls",
 	"lua_ls",
 	"nixd",
+	"hls",
 }
 
 require("lsp-format").setup()
