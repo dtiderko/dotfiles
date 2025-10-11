@@ -43,10 +43,12 @@
     feishin
     plexamp
     gnome-calendar
+    picard
 
     # utils
     usbimager
     keepassxc
+    nautilus
 
     # gaming
     steam
