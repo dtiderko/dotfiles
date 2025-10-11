@@ -51,9 +51,6 @@
     # automatic updates
     autoUpgrade = {
       enable = true;
-      flags = [
-        "--print-build-logs"
-      ];
       dates = "02:00";
       randomizedDelaySec = "45min";
       allowReboot = false;
