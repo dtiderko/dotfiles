@@ -13,6 +13,10 @@
     libheif
     libheif.out 
 
+    gnome-calendar
+    gnome-control-center
+  ];
+
   # for gnomes nautilus
   environment.pathsToLink = [ "share/thumbnailers" ];
   nixpkgs.overlays = [
@@ -27,4 +31,12 @@
       });
     })
   ];
+
+  # for gnome calendar
+  programs.dconf.enable = true;
+  services.gnome = {
+    evolution-data-server.enable = true;
+    gnome-online-accounts.enable = true;
+    gnome-keyring.enable = true;
+  };
 }

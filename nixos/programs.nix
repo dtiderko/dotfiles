@@ -42,7 +42,6 @@
     spotify
     feishin
     plexamp
-    gnome-calendar
     picard
 
     # utils
