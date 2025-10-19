@@ -48,7 +48,6 @@
     # utils
     usbimager
     keepassxc
-    nautilus
 
     # gaming
     steam
