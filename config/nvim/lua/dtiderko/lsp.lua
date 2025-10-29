@@ -17,6 +17,7 @@ local lsp_servers = {
 	"lua_ls",
 	"nixd",
 	"hls",
+	"ts_ls",
 }
 
 require("lsp-format").setup()
