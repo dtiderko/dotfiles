@@ -43,6 +43,7 @@
     feishin
     plexamp
     picard
+    onlyoffice-desktopeditors
 
     # utils
     usbimager
