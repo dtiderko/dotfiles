@@ -5,7 +5,10 @@
     extraOptions = "download-buffer-size = 536870912";
 
     # nix store maintanaince
-    settings.auto-optimise-store = true;
+    optimise = {
+      automatic = true;
+      dates = [ "03:45" ];
+    };
     gc = {
       automatic = true;
       dates = "daily";
