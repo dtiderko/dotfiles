@@ -40,10 +40,10 @@
     obsidian
     vlc
     spotify
-    feishin
     plexamp
     picard
     onlyoffice-desktopeditors
+    gimp
 
     # utils
     usbimager
