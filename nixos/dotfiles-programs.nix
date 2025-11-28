@@ -31,17 +31,28 @@
     python313Packages.isort
     python313Packages.docformatter
     stylua
-    #     lsp
+    #     lsp (also for emacs lsp)
     bash-language-server
     cmake-language-server
     vscode-langservers-extracted
     htmx-lsp
     lua-language-server
     nixd
+
+    # emacs
+    #     vterm
+    cmake
+    gnumake
+    libtool
   ];
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs-gtk;
   };
 }
