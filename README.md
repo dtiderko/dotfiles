@@ -48,6 +48,8 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - typescript-language-server
         - vscode-langservers-extracted
         - zls
+    - dap
+        - gdb
 
 ## Installation
 

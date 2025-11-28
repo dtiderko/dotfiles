@@ -44,6 +44,8 @@
     typescript-language-server
     vscode-langservers-extracted
     zls
+    #     dap
+    gdb
   ];
 
   programs.direnv = {
