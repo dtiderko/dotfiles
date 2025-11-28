@@ -47,8 +47,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- errors
 		bufmap("n", "gl", vim.diagnostic.open_float)
-		bufmap("n", "gp", vim.diagnostic.goto_prev)
-		bufmap("n", "gn", vim.diagnostic.goto_next)
 	end,
 })
 
