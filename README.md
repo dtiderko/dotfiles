@@ -42,18 +42,6 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - htmx-lsp
         - lua-language-server
         - nixd
-- for the emacs stuff
-	- vterm
-		- cmake
-		- gnumake
-		- libtool
-    - lsp
-        - bash-language-server
-        - cmake-language-server
-        - vscode-langservers-extracted
-        - htmx-lsp
-        - lua-language-server
-        - nixd
 
 ## Installation
 
