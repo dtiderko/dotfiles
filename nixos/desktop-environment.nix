@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   services = {
     xserver.enable = true;
-    xserver.displayManager.gdm.enable = true;
+    displayManager.gdm.enable = true;
     desktopManager.cosmic.enable = true;
-    xserver.desktopManager.gnome.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   # fix the stupid clipboard
