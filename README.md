@@ -22,7 +22,7 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - direnv
     - (optional) nix-direnv
     - eza
-- for the neovim stuff (this is just a guideline / the stuff I install globally)
+- for the neovim stuff
     - neovim (nightly)
     - ripgrep
     - fd
@@ -36,12 +36,18 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - python313Packages.docformatter
         - stylua
     - lsp
+        - basedpyright
         - bash-language-server
+        - clang-tools
         - cmake-language-server
-        - vscode-langservers-extracted
+        - haskell-language-server
         - htmx-lsp
         - lua-language-server
         - nixd
+        - rust-analyzer
+        - typescript-language-server
+        - vscode-langservers-extracted
+        - zls
 
 ## Installation
 

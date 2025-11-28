@@ -32,12 +32,18 @@
     python313Packages.docformatter
     stylua
     #     lsp
+    basedpyright
     bash-language-server
+    clang-tools
     cmake-language-server
-    vscode-langservers-extracted
+    haskell-language-server
     htmx-lsp
     lua-language-server
     nixd
+    rust-analyzer
+    typescript-language-server
+    vscode-langservers-extracted
+    zls
   ];
 
   programs.direnv = {

@@ -4,20 +4,20 @@ vim.pack.add({
 })
 
 local lsp_servers = {
-	"bashls",
-	"zls",
 	"basedpyright",
-	"rust_analyzer",
-	"cmake",
+	"bashls",
 	"clangd",
+	"cmake",
 	"cssls",
+	"hls",
 	"html",
 	"htmx",
 	"jsonls",
 	"lua_ls",
 	"nixd",
-	"hls",
+	"rust_analyzer",
 	"ts_ls",
+	"zls",
 }
 
 require("lsp-format").setup()
