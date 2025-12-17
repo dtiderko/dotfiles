@@ -12,6 +12,12 @@
     ./sound.nix
   ];
 
+  # open ports for minecraft server hosting
+  networking.firewall = {
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [ 25565 ];
+  };
+
   # add all man pages
   documentation = {
     enable = true;
