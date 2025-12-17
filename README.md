@@ -41,7 +41,6 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - clang-tools
         - cmake-language-server
         - haskell-language-server
-        - htmx-lsp
         - lua-language-server
         - nixd
         - rust-analyzer

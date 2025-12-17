@@ -37,7 +37,6 @@
     clang-tools
     cmake-language-server
     haskell-language-server
-    htmx-lsp
     lua-language-server
     nixd
     rust-analyzer

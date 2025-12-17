@@ -11,7 +11,6 @@ local lsp_servers = {
 	"cssls",
 	"hls",
 	"html",
-	"htmx",
 	"jsonls",
 	"lua_ls",
 	"nixd",
