@@ -44,6 +44,7 @@
     picard
     onlyoffice-desktopeditors
     gimp
+    vscode
 
     # utils
     usbimager
