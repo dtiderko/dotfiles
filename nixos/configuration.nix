@@ -12,6 +12,18 @@
     ./sound.nix
   ];
 
+  # add all man pages
+  documentation = {
+    enable = true;
+    dev.enable = true;
+    man.enable = true;
+  };
+  environment.systemPackages = with pkgs; [
+    linux-manual
+    man-pages
+    man-pages-posix
+  ];
+
   # allow running dynamically linked executables
   programs.nix-ld.enable = true;
 
