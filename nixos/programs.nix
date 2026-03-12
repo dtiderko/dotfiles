@@ -36,12 +36,13 @@
     tree
 
     # app
+    firefox
     brave
     obsidian
     vlc
     spotify
-    plexamp
     picard
+    beets
     onlyoffice-desktopeditors
     gimp
     vscode
