@@ -17,19 +17,19 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "5813e4878748805f1518cee7abb50fd7205a3a48",
+      "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "gruvbox.nvim": {
-      "rev": "5e0a460d8e0f7f669c158dedd5f9ae2bcac31437",
+      "rev": "561126520034a1dac2f78ab063db025d12555998",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
     "haskell-tools.nvim": {
-      "rev": "3a3f9002e77178f5a7901f5acf33d0176b19e5ab",
+      "rev": "754270182bdd3ce62ed86c97bd8c5de359daefde",
       "src": "https://github.com/mrcjkb/haskell-tools.nvim"
     },
     "indent-blankline.nvim": {
-      "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
+      "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "lsp-format.nvim": {
@@ -37,15 +37,15 @@
       "src": "https://github.com/lukas-reineke/lsp-format.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "7d527c76c43f46294de9c19d39c5a86317809b4b",
+      "rev": "9e3a9fe4f1f9f34b19307a2695dee8fbbd0be776",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
-      "rev": "517ef5994ef9d6b738322664d5fdd948f0fdeb46",
+      "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "molten-nvim": {
@@ -53,19 +53,19 @@
       "src": "https://github.com/benlubas/molten-nvim"
     },
     "neogit": {
-      "rev": "411d615291d9e8f49b377410385febd1e9ce1787",
+      "rev": "515e8cb9c3430a064ec3d9affd499b94f71b3120",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "nvim-autopairs": {
-      "rev": "7a2c97cccd60abc559344042fefb1d5a85b3e33b",
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-cmp": {
-      "rev": "d97d85e01339f01b842e6ec1502f639b080cb0fc",
+      "rev": "da88697d7f45d16852c6b2769dc52387d1ddc45f",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-dap": {
-      "rev": "5860c7c501eb428d3137ee22c522828d20cca0b3",
+      "rev": "b516f20b487b0ac6a281e376dfac1d16b5040041",
       "src": "https://codeberg.org/mfussenegger/nvim-dap"
     },
     "nvim-dap-ui": {
@@ -73,11 +73,11 @@
       "src": "https://github.com/rcarriga/nvim-dap-ui"
     },
     "nvim-dap-view": {
-      "rev": "25ffcf3a6d8d44b6275dac9d5ff9b1f9485907d9",
+      "rev": "4b2bd1773bbb0e2fa740ed6101dfeb50bd98ac38",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lspconfig": {
-      "rev": "07f4e93de92e8d4ea7ab99602e3a8c9ac0fb778a",
+      "rev": "f2193125da0bff2e4eae8e0a45e343ec9bca4c72",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -89,15 +89,15 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ufo": {
-      "rev": "72d54c31079d38d8dfc5456131b1d0fb5c0264b0",
+      "rev": "ab3eb124062422d276fae49e0dd63b3ad1062cfc",
       "src": "https://github.com/kevinhwang91/nvim-ufo"
     },
     "nvim-web-devicons": {
-      "rev": "8dcb311b0c92d460fac00eac706abd43d94d68af",
+      "rev": "737cf6c657898d0c697311d79d361288a1343d50",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "01cb3a8ad7d5e8707041edc775af83dbf33838f4",
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": {
@@ -109,7 +109,7 @@
       "src": "https://github.com/kevinhwang91/promise-async"
     },
     "telescope.nvim": {
-      "rev": "f0caedf064aa8c926325d7fe64c141d29b8e7853",
+      "rev": "5255aa27c422de944791318024167ad5d40aad20",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "todo-comments.nvim": {
