@@ -47,6 +47,9 @@
     gimp
     vscode
 
+    mindustry-wayland
+    osu-lazer-bin
+
     # utils
     usbimager
     keepassxc
@@ -54,7 +57,6 @@
     # gaming
     steam
     heroic
-    bottles
     lutris
     prismlauncher
     sidequest
