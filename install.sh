@@ -21,11 +21,6 @@ for dir in *; do
 done
 cd ..
 
-# install emacs dir
-sudo rm -rf ~/.emacs.d
-sudo ln -s "$(realpath emacs.d)" ~/.emacs.d
-UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm ~/.emacs.d"
-
 # some bash stuff to add
 if [ ! -f old_bashrc ]; then
   if [ ! -f ~/.bashrc ]; then
