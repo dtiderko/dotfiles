@@ -22,33 +22,6 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - direnv
     - (optional) nix-direnv
     - eza
-- for the neovim stuff
-    - neovim (nightly)
-    - ripgrep
-    - fd
-    - gcc
-    - nodejs_24
-    - tree-sitter
-    - wl-clipboard
-    - extra formatter
-        - python313Packages.black
-        - python313Packages.isort
-        - python313Packages.docformatter
-        - stylua
-    - lsp
-        - basedpyright
-        - bash-language-server
-        - clang-tools
-        - cmake-language-server
-        - haskell-language-server
-        - lua-language-server
-        - nixd
-        - rust-analyzer
-        - typescript-language-server
-        - vscode-langservers-extracted
-        - zls
-    - dap
-        - gdb
 
 ## Installation
 
