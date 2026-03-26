@@ -1,6 +1,8 @@
 { pkgs , ... }:
 {
   imports = [
+    ../nixvim
+
     ./boot.nix
     ./desktop-environment.nix
     ./dotfiles-programs.nix
