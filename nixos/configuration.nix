@@ -14,9 +14,11 @@
     ./sound.nix
   ];
 
-  # open ports for minecraft server hosting
+  # open ports for:
+  # - minecraft server hosting
+  # - http dev
   networking.firewall = {
-    allowedTCPPorts = [ 25565 ];
+    allowedTCPPorts = [ 25565 80 ];
     allowedUDPPorts = [ 25565 ];
   };
 
