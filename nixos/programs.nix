@@ -42,7 +42,6 @@
     vlc
     spotify
     picard
-    beets
     onlyoffice-desktopeditors
     gimp
     vscode
