@@ -15,7 +15,7 @@
       cmake.enable = true;
       cssls.enable = true;
       hls.enable = true;
-      html.enable = true;
+      superhtml.enable = true;
       htmx.enable = true;
       jsonls.enable = true;
       nixd.enable = true;
