@@ -15,7 +15,10 @@
   enable = true;
   viAlias = true;
 
-  clipboard.providers.wl-copy.enable = true;
+	clipboard = {
+		register = "unnamedplus";
+    providers.wl-copy.enable = true;
+	};
 
   performance = {
     combinePlugins.enable = true;
