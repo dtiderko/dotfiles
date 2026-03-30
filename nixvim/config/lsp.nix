@@ -1,5 +1,9 @@
 { lib, ... }: {
-  plugins.blink-cmp.enable = true; # autocomplete
+  # autocomplete
+  plugins.blink-cmp = {
+    enable = true;
+    documentation.auto_show = true;
+  };
 
   plugins.lspconfig.enable = true; # default configs
   plugins.lsp-format.enable = true; # formatter
