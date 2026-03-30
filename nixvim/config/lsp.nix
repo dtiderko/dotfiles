@@ -18,7 +18,7 @@
       superhtml.enable = true;
       htmx.enable = true;
       jsonls.enable = true;
-      nixd.enable = true;
+      nil_ls.enable = true;
       rust_analyzer.enable = true;
       ts_ls.enable = true;
       zls.enable = true;
