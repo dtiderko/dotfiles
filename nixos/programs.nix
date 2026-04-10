@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   services.flatpak.enable = true;
   programs = {
@@ -6,7 +7,6 @@
       enable = true;
       openFirewall = true;
     };
-    adb.enable = true;
     chromium.enable = true;
     java.enable = true;
     thunderbird.enable = true;
@@ -52,6 +52,7 @@
     # utils
     usbimager
     keepassxc
+    android-tools
 
     # gaming
     steam

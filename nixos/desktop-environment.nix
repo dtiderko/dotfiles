@@ -1,6 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services = {
-    displayManager.cosmic-greeter.enable = true;
+    displayManager = {
+      cosmic-greeter.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "dennis";
+      };
+    };
     desktopManager.cosmic.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -11,7 +18,7 @@
   environment.systemPackages = with pkgs; [
     nautilus
     libheif
-    libheif.out 
+    libheif.out
 
     gnome-calendar
     gnome-control-center
