@@ -51,6 +51,7 @@
     # utils
     android-tools
     keepassxc
+    masterpdfeditor4
     usbimager
 
     # gaming
