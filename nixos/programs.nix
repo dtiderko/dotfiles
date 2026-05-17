@@ -40,7 +40,6 @@
     firefox
     obsidian
     onlyoffice-desktopeditors
-    gimp
     picard
     plexamp
     spotify
