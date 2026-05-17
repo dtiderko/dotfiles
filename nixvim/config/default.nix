@@ -15,10 +15,10 @@
   enable = true;
   viAlias = true;
 
-	clipboard = {
-		register = "unnamedplus";
+  clipboard = {
+    register = "unnamedplus";
     providers.wl-copy.enable = true;
-	};
+  };
 
   performance = {
     combinePlugins.enable = true;
@@ -29,7 +29,7 @@
       luaLib = true;
       nvimRuntime = true;
       plugins = true;
-      excludedPlugins = [];
+      excludedPlugins = [ ];
     };
   };
 }

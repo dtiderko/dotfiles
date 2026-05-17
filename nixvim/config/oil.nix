@@ -1,11 +1,14 @@
-{ config, ... }: {
+{ config, ... }:
+{
   performance.combinePlugins.standalonePlugins = [ config.plugins.oil.package ];
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>pv";
-    action = "<cmd>Oil<CR>";
-  }];
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>pv";
+      action = "<cmd>Oil<CR>";
+    }
+  ];
 
   plugins.web-devicons.enable = true; # required by oil
   plugins.oil-git-status.enable = true;

@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   # faster start due to ignoring internet
   systemd.network.wait-online.enable = false;

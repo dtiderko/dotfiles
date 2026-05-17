@@ -1,4 +1,4 @@
-{ pkgs , ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../nixvim
@@ -18,7 +18,10 @@
   # - minecraft server hosting
   # - http dev
   networking.firewall = {
-    allowedTCPPorts = [ 25565 80 ];
+    allowedTCPPorts = [
+      25565
+      80
+    ];
     allowedUDPPorts = [ 25565 ];
   };
 
@@ -73,7 +76,7 @@
       pkgs.sane-airscan
     ];
   };
-  
+
   system = {
     stateVersion = "25.05";
     # automatic updates
