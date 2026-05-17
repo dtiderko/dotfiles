@@ -43,6 +43,7 @@
     onlyoffice-desktopeditors
     gimp
     picard
+    plexamp
     spotify
     vlc
     vscode
