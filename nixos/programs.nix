@@ -46,7 +46,6 @@
     vlc
     vscode
 
-    mindustry-wayland
     osu-lazer-bin
 
     # utils
