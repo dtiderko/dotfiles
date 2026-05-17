@@ -56,7 +56,6 @@
 
     # gaming
     heroic
-    lutris
     prismlauncher
     sidequest
     steam
