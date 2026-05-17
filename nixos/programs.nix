@@ -8,6 +8,7 @@
       openFirewall = true;
     };
     chromium.enable = true;
+    coolercontrol.enable = true;
     java.enable = true;
     thunderbird.enable = true;
   };
