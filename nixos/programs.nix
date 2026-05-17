@@ -39,27 +39,27 @@
     firefox
     brave
     obsidian
-    vlc
-    spotify
-    picard
     onlyoffice-desktopeditors
     gimp
+    picard
+    spotify
+    vlc
     vscode
 
     mindustry-wayland
     osu-lazer-bin
 
     # utils
-    usbimager
-    keepassxc
     android-tools
+    keepassxc
+    usbimager
 
     # gaming
-    steam
     heroic
     lutris
     prismlauncher
     sidequest
+    steam
 
     # required by syncthing
     syncthingtray
