@@ -1,13 +1,7 @@
 { pkgs, ... }:
 {
   services = {
-    displayManager = {
-      cosmic-greeter.enable = true;
-      autoLogin = {
-        enable = true;
-        user = "dennis";
-      };
-    };
+    displayManager.cosmic-greeter.enable = true;
     desktopManager.cosmic.enable = true;
     desktopManager.gnome.enable = true;
   };
