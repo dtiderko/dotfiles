@@ -17,12 +17,12 @@
       cssls.enable = true;
       hls.enable = true;
       superhtml.enable = true;
-      htmx.enable = true;
       jsonls.enable = true;
       nil_ls.enable = true;
       rust_analyzer.enable = true;
       ts_ls.enable = true;
       zls.enable = true;
+      glsl_analyzer.enable = true;
     };
     keymaps = [
       # help
