@@ -38,7 +38,6 @@
 
     # app
     firefox
-    brave
     obsidian
     onlyoffice-desktopeditors
     gimp
