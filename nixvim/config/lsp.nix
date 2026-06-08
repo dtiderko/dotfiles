@@ -23,6 +23,7 @@
       ts_ls.enable = true;
       zls.enable = true;
       glsl_analyzer.enable = true;
+      wgsl_analyzer.enable = true;
     };
     keymaps = [
       # help
