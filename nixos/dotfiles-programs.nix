@@ -3,6 +3,8 @@
   environment.systemPackages = with pkgs; [
     alacritty
 
+    devenv
+
     # git stuff
     git
     gnupg
