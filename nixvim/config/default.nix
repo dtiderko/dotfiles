@@ -13,7 +13,6 @@
   ];
 
   enable = true;
-  viAlias = true;
 
   clipboard = {
     register = "unnamedplus";

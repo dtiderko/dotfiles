@@ -30,6 +30,7 @@ if [ ! -f old_bashrc ]; then
 fi
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+echo 'alias vi="nvim ."' >> ~/.bashrc
 echo 'alias ll="eza -l"' >> ~/.bashrc
 echo 'alias la="eza -la"' >> ~/.bashrc
 echo 'alias ls="eza"' >> ~/.bashrc
