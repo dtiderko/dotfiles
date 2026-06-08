@@ -85,6 +85,10 @@
       dates = "02:00";
       randomizedDelaySec = "45min";
       allowReboot = false;
+      flags = [
+        "--max-jobs"
+        "1"
+      ];
     };
   };
 
