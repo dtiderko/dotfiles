@@ -2,8 +2,11 @@
 {
   services = {
     displayManager.cosmic-greeter.enable = true;
-    desktopManager.cosmic.enable = true;
-    desktopManager.gnome.enable = true;
+    desktopManager = {
+      plasma6.enable = true;
+      cosmic.enable = true;
+      gnome.enable = true;
+    };
   };
 
   # fix the stupid clipboard
