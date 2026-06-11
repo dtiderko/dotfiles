@@ -78,7 +78,6 @@
   };
 
   system = {
-    stateVersion = "25.05";
     # automatic updates
     autoUpgrade = {
       enable = true;
