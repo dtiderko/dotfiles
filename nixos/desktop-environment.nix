@@ -1,7 +1,12 @@
 { pkgs, ... }:
 {
   services = {
-    displayManager.cosmic-greeter.enable = true;
+    displayManager = {
+      autoLogin.user = "dennis";
+      defaultSession = "cosmic";
+      # cosmic-greeter.enable = true;
+      sddm.enable = true;
+    };
     desktopManager = {
       plasma6.enable = true;
       cosmic.enable = true;
