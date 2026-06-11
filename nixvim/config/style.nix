@@ -16,5 +16,6 @@
     illuminate.enable = true;
     todo-comments.enable = true;
     render-markdown.enable = true;
+    image.enable = true;
   };
 }
