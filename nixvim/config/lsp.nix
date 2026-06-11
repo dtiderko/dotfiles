@@ -4,6 +4,7 @@
   plugins.blink-cmp = {
     enable = true;
     documentation.auto_show = true;
+    settings.keymap.preset = "super-tab";
   };
 
   plugins.lspconfig.enable = true; # default configs
