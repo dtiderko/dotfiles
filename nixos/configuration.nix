@@ -100,7 +100,6 @@
       "lp"
       "dialout"
       "adbusers"
-      "plugdev"
     ];
   };
 }
