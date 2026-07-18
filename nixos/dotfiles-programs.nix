@@ -16,6 +16,10 @@
     direnv
   ];
 
+  fonts.packages = with pkgs; [
+    monocraft
+  ];
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
