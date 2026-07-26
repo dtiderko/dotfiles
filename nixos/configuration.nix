@@ -3,6 +3,7 @@
   imports = [
     ../nixvim
 
+    ./auto-upgrade.nix
     ./boot.nix
     ./desktop-environment.nix
     ./dotfiles-programs.nix
@@ -75,20 +76,6 @@
     extraBackends = [
       pkgs.sane-airscan
     ];
-  };
-
-  system = {
-    # automatic updates
-    autoUpgrade = {
-      enable = true;
-      dates = "02:00";
-      randomizedDelaySec = "45min";
-      allowReboot = false;
-      flags = [
-        "--max-jobs"
-        "1"
-      ];
-    };
   };
 
   users.users."dennis" = {
