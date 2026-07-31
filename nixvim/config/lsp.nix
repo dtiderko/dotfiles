@@ -3,8 +3,10 @@
   # autocomplete
   plugins.blink-cmp = {
     enable = true;
-    documentation.auto_show = true;
-    settings.keymap.preset = "super-tab";
+    settings = {
+      completion.documentation.auto_show = true;
+      keymap.preset = "super-tab";
+    };
   };
 
   plugins.lspconfig.enable = true; # default configs
