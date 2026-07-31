@@ -1,8 +1,8 @@
 [include]
-  path = ~/coding/.gitconfig
+  path = ~/Projects/.gitconfig
 
-[includeIf "gitdir:~/coding/uni/**"]
-  path = ~/coding/uni/.gitconfig
+[includeIf "gitdir:~/Projects/uni/**"]
+  path = ~/Projects/uni/.gitconfig
 
 [commit]
   gpgSign = true
