@@ -22,8 +22,8 @@ done
 cd ..
 
 # install emacs dir
-sudo rm -rf ~/.emacs.d
-sudo ln -s "$(realpath emacs.d)" ~/.emacs.d
+rm -rf ~/.emacs.d
+ln -s "$(realpath emacs.d)" ~/.emacs.d
 UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm ~/.emacs.d"
 
 # some bash stuff to add
