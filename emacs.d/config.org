@@ -5,13 +5,13 @@
 ** Sources
 
 #+BEGIN_SRC emacs-lisp
-(require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+  (require 'package)
+  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                           ("elpa" . "https://elpa.gnu.org/packages/")))
 
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
 #+END_SRC
 
 ** use-package
@@ -19,23 +19,23 @@
 The package manager I use.
 
 #+BEGIN_SRC emacs-lisp
-(require 'use-package)
-(setq use-package-always-ensure t)
-(setq inhibit-startup-message t)
-(setq package-install-upgrade-built-in t)
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+  (setq inhibit-startup-message t)
+  (setq package-install-upgrade-built-in t)
 #+END_SRC
 
 ** Automatic updates
 
 #+BEGIN_SRC emacs-lisp
-(use-package auto-package-update
-  :custom
-  (auto-package-update-prompt-before-update t)
-  (auto-package-update-hide-results t)
-  (auto-package-update-delete-old-versions t)
-  (auto-package-update-interval 7) ; check every 7 days
-  :config
-  (auto-package-update-maybe))
+  (use-package auto-package-update
+    :custom
+    (auto-package-update-prompt-before-update t)
+    (auto-package-update-hide-results t)
+    (auto-package-update-delete-old-versions t)
+    (auto-package-update-interval 7) ; check every 7 days
+    :config
+    (auto-package-update-maybe))
 #+END_SRC
 
 * UI
@@ -45,7 +45,7 @@ The package manager I use.
 Use the Monocraft Font.
 
 #+BEGIN_SRC emacs-lisp
-(set-face-attribute 'default nil :font "Monocraft")
+  (set-face-attribute 'default nil :font "Monocraft")
 #+END_SRC
 
 ** Theme
@@ -53,58 +53,58 @@ Use the Monocraft Font.
 Use the gruvbox color palette.
 
 #+BEGIN_SRC emacs-lisp
-(use-package gruvbox-theme :config (load-theme 'gruvbox-dark-medium t))
+  (use-package gruvbox-theme :config (load-theme 'gruvbox-dark-medium t))
 #+END_SRC
 
 ** Transparent background
 
 #+BEGIN_SRC emacs-lisp
-(set-frame-parameter nil 'alpha-background 80)
-(add-to-list 'default-frame-alist '(alpha-background . 80))
+  (set-frame-parameter nil 'alpha-background 80)
+  (add-to-list 'default-frame-alist '(alpha-background . 80))
 #+END_SRC
 
 ** disable stupid stuff
 
 #+BEGIN_SRC emacs-lisp
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(tooltip-mode -1)
-(menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (tooltip-mode -1)
+  (menu-bar-mode -1)
 #+END_SRC
 
 ** Relative line numbers
 
 #+BEGIN_SRC emacs-lisp
-(setq-default display-line-numbers-type 'relative) 
-(global-display-line-numbers-mode 1)
+  (setq-default display-line-numbers-type 'relative) 
+  (global-display-line-numbers-mode 1)
 #+END_SRC
 
 Exculde some modes from having relative line numbers.
 
 #+BEGIN_SRC emacs-lisp
-(dolist (mode-hook '(vterm-mode-hook eshell-mode-hook))
-  (add-hook mode-hook (lambda () (display-line-numbers-mode 0))))
+  (dolist (mode-hook '(vterm-mode-hook eshell-mode-hook))
+    (add-hook mode-hook (lambda () (display-line-numbers-mode 0))))
 #+END_SRC
 
 ** Rainbow delimiters
 
 #+BEGIN_SRC emacs-lisp
-(use-package rainbow-delimiters
-             :hook (prog-mode . rainbow-delimiters-mode))
+  (use-package rainbow-delimiters
+    :hook (prog-mode . rainbow-delimiters-mode))
 #+END_SRC
 
 ** Doom modeline
 
 #+BEGIN_SRC emacs-lisp
-(use-package doom-modeline
-             :init (setq doom-modeline-icon t)
-             :config (doom-modeline-mode 1))
+  (use-package doom-modeline
+    :init (setq doom-modeline-icon t)
+    :config (doom-modeline-mode 1))
 #+END_SRC
 
 ** icons
 
 #+BEGIN_SRC emacs-lisp
-(use-package nerd-icons)
+  (use-package nerd-icons)
 #+END_SRC
 
 ** Color column
@@ -119,8 +119,8 @@ Exculde some modes from having relative line numbers.
 ** Backup file dir
 
 #+BEGIN_SRC emacs-lisp
-(setq backup-directory-alist `(("." . ,(expand-file-name "backup/" user-emacs-directory))))
-(make-directory (expand-file-name "backup/" user-emacs-directory) t)
+  (setq backup-directory-alist `(("." . ,(expand-file-name "backup/" user-emacs-directory))))
+  (make-directory (expand-file-name "backup/" user-emacs-directory) t)
 #+END_SRC
 
 ** Commenting
@@ -192,16 +192,16 @@ Show available keycombos on keypress.
 And enable undo in non buffer files (?)
 
 #+BEGIN_SRC emacs-lisp
-    (use-package undo-tree
-      :after evil
-      :init
-      (global-undo-tree-mode)
-      (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
-      :config
-      (make-directory (expand-file-name "undo/" user-emacs-directory) t)
-      (setq undo-tree-history-directory-alist
-          `(("." . ,(expand-file-name "undo/" user-emacs-directory))))
-      )
+  (use-package undo-tree
+    :after evil
+    :init
+    (global-undo-tree-mode)
+    (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
+    :config
+    (make-directory (expand-file-name "undo/" user-emacs-directory) t)
+    (setq undo-tree-history-directory-alist
+  	`(("." . ,(expand-file-name "undo/" user-emacs-directory))))
+    )
 #+END_SRC
 
 Add some more evil keybindings.
@@ -317,7 +317,7 @@ Add helpful information to Emacs' describe- command buffers.
   (use-package grease
     :load-path "~/.emacs.d/lisp/grease.el"
     :commands (grease-open grease-toggle grease-here)
-  )
+    )
 
   (dtiderko/leader-keys "pv" '(grease-toggle :which-key "Open grease"))
 #+END_SRC
@@ -332,9 +332,9 @@ Support for project management.
   (use-package projectile
     :init
     (setq projectile-project-search-path '(
-					   ("~/" . 1)
-					   ("~/Projects" . 2)
-					   ))
+  					 ("~/" . 1)
+  					 ("~/Projects" . 2)
+  					 ))
     :config
     (setq projectile-enable-caching t)
     (global-set-key (kbd "C-c p") 'projectile-command-map)
@@ -350,15 +350,15 @@ Support for project management.
 And auto discover all available projects.
 
 #+BEGIN_SRC emacs-lisp
-(projectile-discover-projects-in-search-path)
+  (projectile-discover-projects-in-search-path)
 #+END_SRC
 
 Extension to intergrate with counsel.
 
 #+BEGIN_SRC emacs-lisp
-(use-package counsel-projectile
-  :after projectile
-  :config (counsel-projectile-mode))
+  (use-package counsel-projectile
+    :after projectile
+    :config (counsel-projectile-mode))
 #+END_SRC
 
 ** envrc
@@ -366,10 +366,10 @@ Extension to intergrate with counsel.
 Enter devenv on project enter.
 
 #+BEGIN_SRC emacs-lisp
-(use-package envrc
-  :hook (after-init . envrc-global-mode))
-(with-eval-after-load 'envrc
-  (define-key envrc-mode-map (kbd "C-c e") 'envrc-command-map))
+  (use-package envrc
+    :hook (after-init . envrc-global-mode))
+  (with-eval-after-load 'envrc
+    (define-key envrc-mode-map (kbd "C-c e") 'envrc-command-map))
 #+END_SRC
 
 ** LSP
@@ -377,48 +377,63 @@ Enter devenv on project enter.
 *** install lsp
 
 #+BEGIN_SRC emacs-lisp
-    (use-package lsp-mode
-      :init
-      ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-      (setq lsp-keymap-prefix "C-c l")
-      :hook (
-             (lsp-mode . lsp-enable-which-key-integration)
+  (use-package lsp-mode
+    :init
+    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+    (setq lsp-keymap-prefix "C-c l")
+    :hook (
+           (lsp-mode . lsp-enable-which-key-integration)
 
-             (c++-mode . lsp-deferred)
-             (c-mode . lsp-deferred)
-             (cmake-mode . lsp-deferred)
-             (css-mode . lsp-deferred)
-             (haskell-mode . lsp-deferred)
-             (html-mode . lsp-deferred)
-             (js-mode . lsp-deferred)
-             (json-mode . lsp-deferred)
-             (lua-mode . lsp-deferred)
-             (markdown-mode . lsp-deferred)
-             (nix-mode . lsp-deferred)
-             (python-mode . lsp-deferred)
-             (rust-mode . lsp-deferred)
-             (sh-mode . lsp-deferred)
-             (yaml-mode . lsp-deferred)
-             (zig-mode . lsp-deferred)
-             (glsl-mode . lsp-deferred)
-            )
-      :commands (lsp lsp-deferred))
+           (c++-mode . lsp-deferred)
+           (c-mode . lsp-deferred)
+           (cmake-mode . lsp-deferred)
+           (css-mode . lsp-deferred)
+           (haskell-mode . lsp-deferred)
+           (html-mode . lsp-deferred)
+           (js-mode . lsp-deferred)
+           (json-mode . lsp-deferred)
+           (lua-mode . lsp-deferred)
+           (markdown-mode . lsp-deferred)
+           (nix-mode . lsp-deferred)
+           (python-mode . lsp-deferred)
+           (rust-mode . lsp-deferred)
+           (sh-mode . lsp-deferred)
+           (yaml-mode . lsp-deferred)
+           (zig-mode . lsp-deferred)
+           (glsl-mode . lsp-deferred)
+           )
+    :commands (lsp lsp-deferred))
 
-    (use-package lsp-ui
-      :commands lsp-ui-mode
-      :custom
-      (lsp-ui-doc-position 'at-point))
-    (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+  (use-package lsp-ui
+    :commands lsp-ui-mode
+    :custom
+    (lsp-ui-doc-position 'at-point))
+  (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 
-    ; performance tuning
-    (setq gc-cons-threshold 100000000)
-    (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  					; performance tuning
+  (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
 #+END_SRC
 
 *** auto formatting
 
 #+BEGIN_SRC emacs-lisp
-(use-package apheleia :config (apheleia-global-mode +1))
+  (use-package apheleia
+    :config (apheleia-global-mode +1)
+
+    ;; Custom function to format Org emacs-lisp blocks on save
+    (defun my/org-format-elisp-blocks ()
+      "Formats all emacs-lisp code blocks in the current Org buffer."
+      (when (eq major-mode 'org-mode)
+        (org-save-outline-visibility t
+    	(org-babel-map-src-blocks nil
+    	  (when (string= lang "emacs-lisp")
+    	    (org-edit-special)
+    	    (indent-region (point-min) (point-max))
+    	    (org-edit-src-exit))))))
+
+    ;; Trigger the block formatter right before saving the file
+    (add-hook 'before-save-hook #'my/org-format-elisp-blocks))
 #+END_SRC
 
 *** keybinds
@@ -426,7 +441,7 @@ Enter devenv on project enter.
 #+BEGIN_SRC emacs-lisp
   (with-eval-after-load 'evil
     (evil-define-key 'normal lsp-mode-map
-      ; help
+  					; help
       (kbd "K")  'lsp-ui-doc-glance
       (kbd "gd") 'lsp-find-definition
       (kbd "gD") 'lsp-find-declaration
@@ -435,10 +450,10 @@ Enter devenv on project enter.
       (kbd "gr") 'lsp-find-references
       (kbd "gs") 'lsp-signature-activate
 
-      ; errors
-      (kbd "gl") 'lsp-ui-flycheck-list)) ; or 'flymake-show-buffer-diagnostics
+  					; errors
+      (kbd "gl") 'lsp-ui-flycheck-list))
 
-  ; actions
+  					; actions
   (dtiderko/leader-keys
     "rn" '(lsp-rename :which-key "Rename symbol")
     "a"  '(lsp-execute-code-action :which-key "Code action"))
@@ -451,9 +466,9 @@ Enter devenv on project enter.
 Interface for git
 
 #+BEGIN_SRC emacs-lisp
-(use-package transient)
-(use-package magit :after transient)
-(dtiderko/leader-keys "G" '(magit-status :which-key "Open Magit"))
+  (use-package transient)
+  (use-package magit :after transient)
+  (dtiderko/leader-keys "G" '(magit-status :which-key "Open Magit"))
 #+END_SRC
 
 ** Git Gutter
@@ -476,8 +491,7 @@ And modify the Bitmap for appearance
     :config
     (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
     (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
-    (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom)
-    )
+    (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 #+END_SRC
 
 * Terminal
@@ -488,8 +502,7 @@ This terminal needs to compile a native library. Therefore, make sure to install
   (use-package vterm
     :commands vterm
     :config
-    (setq vterm-shell "bash")
-  )
+    (setq vterm-shell "bash"))
 #+END_SRC
 
 And add a keybind to open a new unique terminal.
@@ -498,7 +511,6 @@ And add a keybind to open a new unique terminal.
   (defun unique-vterm ()
     (interactive)
     (vterm)
-    (rename-uniquely)
-    )
+    (rename-uniquely))
   (dtiderko/leader-keys "t" '(unique-vterm :which-key "Open Terminal"))
 #+END_SRC
