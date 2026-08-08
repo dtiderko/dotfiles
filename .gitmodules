@@ -1,0 +1,3 @@
+[submodule "emacs.d/lisp/grease.el"]
+	path = emacs.d/lisp/grease.el
+	url = git@github.com:mwac-dev/grease.el.git

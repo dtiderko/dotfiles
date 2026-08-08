@@ -7,9 +7,8 @@
 #+BEGIN_SRC emacs-lisp
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")
-                         ))
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -20,12 +19,10 @@
 The package manager I use.
 
 #+BEGIN_SRC emacs-lisp
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
 (require 'use-package)
 (setq use-package-always-ensure t)
 (setq inhibit-startup-message t)
+(setq package-install-upgrade-built-in t)
 #+END_SRC
 
 ** Automatic updates
@@ -35,19 +32,20 @@ The package manager I use.
   :custom
   (auto-package-update-prompt-before-update t)
   (auto-package-update-hide-results t)
+  (auto-package-update-delete-old-versions t)
+  (auto-package-update-interval 7) ; check every 7 days
   :config
-  (auto-package-update-maybe)
-  (auto-package-update-at-time "09:00"))
+  (auto-package-update-maybe))
 #+END_SRC
 
 * UI
 
 ** Font
 
-Use the JetBrains Mono Nerd Font.
+Use the Monocraft Font.
 
 #+BEGIN_SRC emacs-lisp
-(set-face-attribute 'default nil :font "JetBrains Mono Nerd Font")
+(set-face-attribute 'default nil :font "Monocraft")
 #+END_SRC
 
 ** Theme
@@ -55,15 +53,14 @@ Use the JetBrains Mono Nerd Font.
 Use the gruvbox color palette.
 
 #+BEGIN_SRC emacs-lisp
-(use-package gruvbox-theme)
-(load-theme 'gruvbox-dark-medium t)
+(use-package gruvbox-theme :config (load-theme 'gruvbox-dark-medium t))
 #+END_SRC
 
 ** Transparent background
 
 #+BEGIN_SRC emacs-lisp
-  (set-frame-parameter nil 'alpha-background 70)
-  (add-to-list 'default-frame-alist '(alpha-background . 70))
+(set-frame-parameter nil 'alpha-background 80)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
 #+END_SRC
 
 ** disable stupid stuff
@@ -78,16 +75,15 @@ Use the gruvbox color palette.
 ** Relative line numbers
 
 #+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type 'relative) 
-(global-display-line-numbers-mode)
+(setq-default display-line-numbers-type 'relative) 
+(global-display-line-numbers-mode 1)
 #+END_SRC
 
 Exculde some modes from having relative line numbers.
 
 #+BEGIN_SRC emacs-lisp
-(dolist (mode '(vterm-mode-hook
-                 eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+(dolist (mode-hook '(vterm-mode-hook eshell-mode-hook))
+  (add-hook mode-hook (lambda () (display-line-numbers-mode 0))))
 #+END_SRC
 
 ** Rainbow delimiters
@@ -101,10 +97,8 @@ Exculde some modes from having relative line numbers.
 
 #+BEGIN_SRC emacs-lisp
 (use-package doom-modeline
-             :init
-             (setq doom-modeline-icon t)
-             (doom-modeline-mode 1)
-             )
+             :init (setq doom-modeline-icon t)
+             :config (doom-modeline-mode 1))
 #+END_SRC
 
 ** icons
@@ -122,31 +116,11 @@ Exculde some modes from having relative line numbers.
 
 * QOL
 
-** Autosave file dir
-
-First ensure the autosave dir exists
-
-#+BEGIN_SRC emacs-lisp
-  (unless (file-exists-p "~/.emacs.d/autosave")
-    (make-directory "~/.emacs.d/autosave")
-  )
-#+END_SRC
-
-Then make sure autosaves get stored there
-
-#+BEGIN_SRC emacs-lisp
-  ;(setq auto-save-list-file-prefix "~/.emacs.d/autosave/")
-(setq auto-save-file-name-transforms
-      '((".*" "~/.emacs.d/autosave/" t)))
-#+END_SRC
-
 ** Backup file dir
 
 #+BEGIN_SRC emacs-lisp
-  (unless (file-exists-p "~/.emacs.d/backup")
-    (make-directory "~/.emacs.d/backup")
-  )
-(setq backup-directory-alist `(("." . "~/.emacs.d/backup/")))
+(setq backup-directory-alist `(("." . ,(expand-file-name "backup/" user-emacs-directory))))
+(make-directory (expand-file-name "backup/" user-emacs-directory) t)
 #+END_SRC
 
 ** Commenting
@@ -192,9 +166,7 @@ Show available keycombos on keypress.
   (use-package which-key
     :init (which-key-mode)
     :diminish which-key-mode
-    :config
-    (which-key-mode)
-    (setq which-key-idle-delay 0.3))
+    :config (setq which-key-idle-delay 0.3))
 #+END_SRC
 
 ** Evil mode (vim motions)
@@ -220,17 +192,16 @@ Show available keycombos on keypress.
 And enable undo in non buffer files (?)
 
 #+BEGIN_SRC emacs-lisp
-  (use-package undo-tree
-    :after evil
-    :init
-    (global-undo-tree-mode)
-    (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
-    :config
-    (unless (file-exists-p "~/.emacs.d/undo")
-      (make-directory "~/.emacs.d/undo")
+    (use-package undo-tree
+      :after evil
+      :init
+      (global-undo-tree-mode)
+      (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
+      :config
+      (make-directory (expand-file-name "undo/" user-emacs-directory) t)
+      (setq undo-tree-history-directory-alist
+          `(("." . ,(expand-file-name "undo/" user-emacs-directory))))
       )
-    (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
-    )
 #+END_SRC
 
 Add some more evil keybindings.
@@ -253,8 +224,7 @@ Here are all keybinds starting with space
 
     (general-create-definer dtiderko/leader-keys
       :keymaps '(normal visual emacs)
-      :prefix "SPC"
-      )
+      :prefix "SPC")
     )
 #+END_SRC
 
@@ -290,6 +260,7 @@ And an extension to show more information.
 
 #+BEGIN_SRC emacs-lisp
   (use-package ivy-rich
+    :after counsel
     :init
     (ivy-rich-mode 1))
 #+END_SRC
@@ -340,28 +311,15 @@ Add helpful information to Emacs' describe- command buffers.
 
 * File management
 
-** dirvish
+** grease
 
 #+BEGIN_SRC emacs-lisp
-  (use-package dirvish
-    :init
-    (dirvish-override-dired-mode)
-    :config
-    (setq dired-listing-switches "-lX --almost-all --group-directories-first")
-    (setq dirvish-attributes
-          '(nerd-icons file-time file-size collapse subtree-state vc-state git-msg))
-    (setq dirvish-mode-line-format
-          '(:left (sort symlink) :right (omit yank index)))
-    (setq dirvish-subtree-state-style 'nerd)
-    (setq dirvish-default-layout nil)
-    (setq dirvish-path-separators (list
-                                   (format "  %s " (nerd-icons-codicon "nf-cod-home"))
-                                   (format "  %s " (nerd-icons-codicon "nf-cod-root_folder"))
-                                   (format " %s " (nerd-icons-faicon "nf-fa-angle_right"))))
-    (setq delete-by-moving-to-trash t)
-    )
+  (use-package grease
+    :load-path "~/.emacs.d/lisp/grease.el"
+    :commands (grease-open grease-toggle grease-here)
+  )
 
-  (dtiderko/leader-keys "pv" '(dirvish :which-key "Open dirvish"))
+  (dtiderko/leader-keys "pv" '(grease-toggle :which-key "Open grease"))
 #+END_SRC
 
 * Development environments
@@ -375,8 +333,7 @@ Support for project management.
     :init
     (setq projectile-project-search-path '(
 					   ("~/" . 1)
-					   ("~/coding/" . 2)
-					   ("~/coding/uni/" . 2)
+					   ("~/Projects" . 2)
 					   ))
     :config
     (setq projectile-enable-caching t)
@@ -385,7 +342,7 @@ Support for project management.
     )
 
   (dtiderko/leader-keys
-    "SPC" '(project-find-file :which-key "Find file in project")
+    "SPC" '(projectile-find-file :which-key "Find file in project")
     "g" '(projectile-ripgrep :which-key "Grep the project")
     )
 #+END_SRC
@@ -417,129 +374,74 @@ Enter devenv on project enter.
 
 ** LSP
 
-*** install missing modes
+*** install lsp
 
 #+BEGIN_SRC emacs-lisp
-(use-package cmake-mode)
-(use-package css-mode)
-(use-package haskell-mode)
-(use-package json-mode)
-(use-package js)
-(use-package lua-mode)
-(use-package markdown-mode)
-(use-package nix-mode)
-(use-package python-mode)
-(use-package rust-mode)
-(use-package sh-script)
-(use-package yaml-mode)
-(use-package zig-mode)
+    (use-package lsp-mode
+      :init
+      ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+      (setq lsp-keymap-prefix "C-c l")
+      :hook (
+             (lsp-mode . lsp-enable-which-key-integration)
+
+             (c++-mode . lsp-deferred)
+             (c-mode . lsp-deferred)
+             (cmake-mode . lsp-deferred)
+             (css-mode . lsp-deferred)
+             (haskell-mode . lsp-deferred)
+             (html-mode . lsp-deferred)
+             (js-mode . lsp-deferred)
+             (json-mode . lsp-deferred)
+             (lua-mode . lsp-deferred)
+             (markdown-mode . lsp-deferred)
+             (nix-mode . lsp-deferred)
+             (python-mode . lsp-deferred)
+             (rust-mode . lsp-deferred)
+             (sh-mode . lsp-deferred)
+             (yaml-mode . lsp-deferred)
+             (zig-mode . lsp-deferred)
+             (glsl-mode . lsp-deferred)
+            )
+      :commands (lsp lsp-deferred))
+
+    (use-package lsp-ui
+      :commands lsp-ui-mode
+      :custom
+      (lsp-ui-doc-position 'at-point))
+    (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+
+    ; performance tuning
+    (setq gc-cons-threshold 100000000)
+    (setq read-process-output-max (* 1024 1024)) ;; 1mb
 #+END_SRC
 
-*** eglot
-
-The main lsp thing starting servers and such.
+*** auto formatting
 
 #+BEGIN_SRC emacs-lisp
-  (use-package eglot
-    :ensure t
-    :defer t
-    :hook (
-           (c-mode . eglot-ensure)
-           (cmake-mode . eglot-ensure)
-           (css-mode . eglot-ensure)
-           (html-mode . eglot-ensure)
-           (haskell-mode . eglot-ensure)
-           (json-mode . eglot-ensure)
-           (java-mode . eglot-ensure)
-           (js-mode . eglot-ensure)
-           (lua-mode . eglot-ensure)
-           (markdown-mode . eglot-ensure)
-           (nix-mode . eglot-ensure)
-           (python-mode . eglot-ensure)
-           (rust-mode . eglot-ensure)
-           (sh-mode . eglot-ensure)
-           (yaml-mode . eglot-ensure)
-           (zig-mode . eglot-ensure)
-
-           ; auto-format on save
-    	   (after-save . dtiderko/eglot-format-or-external)
-           )
-    :config
-    (add-to-list 'eglot-server-programs
-                 '((rust-ts-mode rust-mode) .
-                   ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))
-
-                 )
-  )
+(use-package apheleia :config (apheleia-global-mode +1))
 #+END_SRC
 
-And define the autoformat function
+*** keybinds
 
 #+BEGIN_SRC emacs-lisp
-    (defun dtiderko/eglot-format-or-external ()
-      "Format buffer with LSP if available, else use custom formatters"
-      (interactive)
-      (if (and (bound-and-true-p eglot--managed-mode)
-               (eglot-managed-p))
-          (condition-case nil
-              (eglot-format-buffer)
-            (error (dtiderko/fallback-format)))
-        (dtiderko/fallback-format)))
+  (with-eval-after-load 'evil
+    (evil-define-key 'normal lsp-mode-map
+      ; help
+      (kbd "K")  'lsp-ui-doc-glance
+      (kbd "gd") 'lsp-find-definition
+      (kbd "gD") 'lsp-find-declaration
+      (kbd "gi") 'lsp-find-implementation
+      (kbd "go") 'lsp-find-type-definition
+      (kbd "gr") 'lsp-find-references
+      (kbd "gs") 'lsp-signature-activate
 
-    (defun dtiderko/fallback-format ()
-      "Fallback to external formatters for specific modes."
-      (cond
-       ((derived-mode-p 'python-mode)
-        (dtiderko/python-format))
-       ((derived-mode-p 'lua-mode)
-        (dtiderko/lua-format))
-       ))
+      ; errors
+      (kbd "gl") 'lsp-ui-flycheck-list)) ; or 'flymake-show-buffer-diagnostics
 
-    (defun dtiderko/python-format ()
-      "Formatters for python"
-      (when (buffer-file-name)
-        (save-buffer)
-        (shell-command (format "black --preview -q %s" (shell-quote-argument (buffer-file-name))))
-        (shell-command (format "isort --profile black --float-to-top -q %s" (shell-quote-argument (buffer-file-name))))
-        (shell-command (format "docformatter --in-place --black %s" (shell-quote-argument (buffer-file-name))))
-        (revert-buffer t t t)
-        ))
-
-    (defun dtiderko/lua-format ()
-      "Formatters for lua"
-      (when (buffer-file-name)
-        (save-buffer)
-        (shell-command (format "stylua %s" (shell-quote-argument (buffer-file-name))))
-        (revert-buffer t t t)
-      ))
-#+END_SRC
-
-*** company
-
-The pop up window showing stuff.
-
-#+BEGIN_SRC emacs-lisp
-  (use-package company
-               :hook ((prog-mode . company-mode))
-               :config
-               (global-set-key (kbd "C-<SPC>") #'company-complete)
-               :bind (:map company-active-map
-                           ("<return>" . company-complete-selection)
-
-                           ("<tab>" . company-select-next)
-                           ("<backtab>" . company-select-previous)
-                           )
-               )
-#+END_SRC
-
-And an extension to show me documentation.
-
-#+BEGIN_SRC emacs-lisp
-(use-package company-quickhelp
-  :after company
-  :hook (company-mode . company-quickhelp-mode)
-  :config
-  (setq company-quickhelp-delay 0.2))
+  ; actions
+  (dtiderko/leader-keys
+    "rn" '(lsp-rename :which-key "Rename symbol")
+    "a"  '(lsp-execute-code-action :which-key "Code action"))
 #+END_SRC
 
 * Git
@@ -549,8 +451,9 @@ And an extension to show me documentation.
 Interface for git
 
 #+BEGIN_SRC emacs-lisp
-  (use-package magit)
-  (dtiderko/leader-keys "G" '(magit-status :which-key "Open Magit"))
+(use-package transient)
+(use-package magit :after transient)
+(dtiderko/leader-keys "G" '(magit-status :which-key "Open Magit"))
 #+END_SRC
 
 ** Git Gutter

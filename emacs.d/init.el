@@ -8,18 +8,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(all-the-icons-dired auto-package-update cmake-mode company-quickhelp
-			 consult counsel-projectile dirvish
-			 doom-modeline envrc evil-collection
-			 evil-nerd-commenter general git-gutter-fringe
-			 gruvbox-theme haskell-mode helpful
-			 ivy-prescient ivy-rich json-mode lua-mode
-			 magit marginalia markdown-mode nix-mode
-			 orderless python-mode rainbow-delimiters
-			 rust-mode session undo-tree vertico vterm
-			 yaml-mode zig-mode))
- '(session-use-package t nil (session)))
+ '(package-selected-packages nil)
+ '(session-use-package t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
