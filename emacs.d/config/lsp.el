@@ -32,7 +32,7 @@
       (ignore-errors (mason-install pkg)))))
 
 ;;; enable lsps
-
+(use-package rust-mode)
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
