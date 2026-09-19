@@ -61,7 +61,9 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - htmx-lsp
         - lua-language-server
         - nixd
-    - jetbrains-mono-fonts
+		- marksman
+    - Monocraft
+	- ripgrep
 
 ## Installation
 
