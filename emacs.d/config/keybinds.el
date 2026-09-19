@@ -51,6 +51,8 @@
   (general-create-definer dtiderko/leader-keys
     :keymaps '(normal visual emacs)
     :prefix "SPC")
+  (dtiderko/leader-keys
+    "q" 'evil-quit)
   )
 
 (provide 'keybinds)
