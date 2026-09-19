@@ -63,6 +63,12 @@
   :custom
   (lsp-ui-doc-position 'at-point))
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package flycheck
+  :ensure t
+  :hook ((after-init . global-flycheck-mode)
+         (after-init . global-flycheck-annotate-mode))
+  :config
+  (global-flycheck-lsp-mode 1))
 
 ;; performance tuning
 (setq gc-cons-threshold 100000000)
