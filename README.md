@@ -1,16 +1,6 @@
 # dotfiles
 
-My personal dotfiles for both nixos and normal linux.
-
-Nixos is configured for the user `dennis`.
-
 ## Requirements
-
-> This can be skipped if you are using nixos
-
-The list is using package names used by NixOS. \
-If your system is using a different name but you are not sure which, you can find
-the Homepages of the packages below on [this site](https://search.nixos.org/packages?channel=25.05).
 
 - for the alacritty stuff
     - alacritty

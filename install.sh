@@ -19,13 +19,7 @@ ln -s "$(realpath emacs.d)" ~/.emacs.d
 UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm ~/.emacs.d"
 
 # some bash stuff to add
-if [ ! -f old_bashrc ]; then
-  if [ ! -f ~/.bashrc ]; then
-    touch ~/.bashrc
-  fi
-  cp ~/.bashrc old_bashrc
-fi
-cat << 'EOF' >> ~/.bashrc
+cat << 'EOF' >> ~/.dotfiles_bashrc
 # import nix commands if they exist
 if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh
@@ -50,7 +44,10 @@ export HISTCONTROL="ignoredups"
 mkdir -p $HOME/.local/bin
 PATH=$PATH:$HOME/.local/bin
 EOF
-UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; mv old_bashrc ~/.bashrc"
+if [ ! -f ~/.bashrc ]; then touch ~/.bashrc; fi
+echo ". \$HOME/.dotfiles_bashrc" >> ~/.bashrc
+UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; sed -i '/^\. \$HOME\/\.dotfiles_bashrc/d' ~/.bashrc"
+UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm ~/.dotfiles_bashrc"
 
 UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm uninstall.sh"
 echo "$UNINSTALL_SCRIPT" > uninstall.sh
