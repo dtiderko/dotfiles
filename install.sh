@@ -13,11 +13,6 @@ for dir in *; do
 done
 cd ..
 
-# install emacs dir
-rm -rf ~/.emacs.d
-ln -s "$(realpath emacs.d)" ~/.emacs.d
-UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm ~/.emacs.d"
-
 # some bash stuff to add
 cat << 'EOF' >> ~/.dotfiles_bashrc
 # import nix commands if they exist
@@ -43,6 +38,9 @@ export HISTCONTROL="ignoredups"
 # add local binaries
 mkdir -p $HOME/.local/bin
 PATH=$PATH:$HOME/.local/bin
+
+# add doom emacs cmd
+PATH=$PATH:$HOME/.config/emacs/bin
 EOF
 if [ ! -f ~/.bashrc ]; then touch ~/.bashrc; fi
 echo ". \$HOME/.dotfiles_bashrc" >> ~/.bashrc
