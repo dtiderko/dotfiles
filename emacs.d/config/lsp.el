@@ -77,21 +77,7 @@
 ;;; auto formatting
 
 (use-package apheleia
-  :config (apheleia-global-mode +1)
-
-  ;; Custom function to format Org emacs-lisp blocks on save
-  (defun my/org-format-elisp-blocks ()
-    "Formats all emacs-lisp code blocks in the current Org buffer."
-    (when (eq major-mode 'org-mode)
-      (org-save-outline-visibility t
-    				   (org-babel-map-src-blocks nil
-    							     (when (string= lang "emacs-lisp")
-    							       (org-edit-special)
-    							       (indent-region (point-min) (point-max))
-    							       (org-edit-src-exit))))))
-
-  ;; Trigger the block formatter right before saving the file
-  (add-hook 'before-save-hook #'my/org-format-elisp-blocks))
+  :config (apheleia-global-mode +1))
 
 ;;; keybinds
 
