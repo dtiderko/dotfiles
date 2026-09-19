@@ -1,15 +1,46 @@
-;;; install lsp
+(ensure-sys-pkg "git")
+(ensure-sys-pkg "npm")
+(ensure-sys-pkg "python")
+(ensure-sys-pkg "cargo")
+(ensure-sys-pkg "ghcup")
+
+;;; install lsps
+
+(use-package mason
+  :ensure t
+  :config
+  (mason-setup))
+
+(mason-setup
+  (dolist (pkg '(
+		 "clangd"
+		 "css-lsp"
+		 "haskell-language-server"
+		 "html-lsp"
+		 "biome" ; json, js and more
+		 "lua-language-server"
+		 "marksman"
+		 "nil"
+		 "basedpyright"
+		 "rust-analyzer"
+		 "bash-language-server"
+		 "yaml-language-server"
+		 "zls"
+		 "glsl_analyzer"
+		 ))
+    (unless (mason-installed-p pkg)
+      (ignore-errors (mason-install pkg)))))
+
+;;; enable lsps
 
 (use-package lsp-mode
   :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
   :hook (
          (lsp-mode . lsp-enable-which-key-integration)
 
          (c++-mode . lsp-deferred)
          (c-mode . lsp-deferred)
-         (cmake-mode . lsp-deferred)
          (css-mode . lsp-deferred)
          (haskell-mode . lsp-deferred)
          (html-mode . lsp-deferred)
@@ -33,9 +64,6 @@
   (lsp-ui-doc-position 'at-point))
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 
-(with-eval-after-load 'evil
-  (define-key evil-insert-state-map (kbd "C-SPC") #'lsp-signature-activate))
-
 ;; performance tuning
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ; 1mb
@@ -50,11 +78,11 @@
     "Formats all emacs-lisp code blocks in the current Org buffer."
     (when (eq major-mode 'org-mode)
       (org-save-outline-visibility t
-    	(org-babel-map-src-blocks nil
-    	  (when (string= lang "emacs-lisp")
-    	    (org-edit-special)
-    	    (indent-region (point-min) (point-max))
-    	    (org-edit-src-exit))))))
+    				   (org-babel-map-src-blocks nil
+    							     (when (string= lang "emacs-lisp")
+    							       (org-edit-special)
+    							       (indent-region (point-min) (point-max))
+    							       (org-edit-src-exit))))))
 
   ;; Trigger the block formatter right before saving the file
   (add-hook 'before-save-hook #'my/org-format-elisp-blocks))

@@ -25,6 +25,7 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
 - for the emacs stuff
 	0. start emacs and look for warnings like `cmake is not installed on your system!`
 	0. install the programs / fonts listed there
+	0. if there are any lsps failing to install, start emacs and run `M-x mason-doctor` to check for any relevant programs missing
 - for the neovim stuff
     - neovim (nightly)
     - ripgrep
