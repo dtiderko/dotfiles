@@ -15,6 +15,10 @@
 (setq inhibit-startup-message t)
 (setq package-install-upgrade-built-in t)
 
+(defun ensure-sys-pkg (pkg)
+  (unless (executable-find pkg)
+    (warn "%s is not installed on your system!" pkg)))
+
 ;;; Automatic updates
 
 (use-package auto-package-update

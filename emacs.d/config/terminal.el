@@ -1,4 +1,9 @@
-;; This terminal needs to compile a native library. Therefore, make sure to install all required libraries.
+;; required by: vterm
+(ensure-sys-pkg "cmake")
+(ensure-sys-pkg "make")
+(ensure-sys-pkg "gcc")
+(ensure-sys-pkg "libtool")
+(ensure-sys-pkg "bash")
 
 (use-package vterm
   :commands vterm

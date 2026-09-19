@@ -1,3 +1,5 @@
+(ensure-sys-pkg "git") ; required by: magit, git-gutter
+
 ;;; Magit
 
 (use-package transient)
@@ -8,7 +10,7 @@
 
 ;; Actually good guide here: https://ianyepan.github.io/posts/emacs-git-gutter/
 
-;;Show which lines are new/deleted/modified
+;; Show which lines are new/deleted/modified
 
 (use-package git-gutter
   :hook (prog-mode . git-gutter-mode)

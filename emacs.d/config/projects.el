@@ -1,3 +1,6 @@
+(ensure-sys-pkg "rg") ; required by: projectile, counsel
+(ensure-sys-pkg "direnv") ; required by: envrc
+
 ;;; projectile
 
 (use-package projectile

@@ -1,7 +1,8 @@
 ;;; Font
 
-(set-face-attribute 'default nil :font "Monocraft")
-
+(if (member "Monocraft" (font-family-list))
+    (set-face-attribute 'default nil :font "Monocraft")
+  (warn "Monocraft font is not installed on your system!"))
 ;;; Theme
 
 (use-package gruvbox-theme :config (load-theme 'gruvbox-dark-medium t))
@@ -40,7 +41,12 @@
 
 ;;; icons
 
-(use-package nerd-icons)
+(use-package nerd-icons
+  :config
+  (when (not (member "Symbols Nerd Font Mono" (font-family-list)))
+    (message "Symbols Nerd Font Mono is missing. Installing...")
+    (nerd-icons-install-fonts t))
+  )
 
 ;;; Color column
 

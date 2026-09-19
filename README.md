@@ -22,6 +22,9 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
     - direnv
     - (optional) nix-direnv
     - eza
+- for the emacs stuff
+	0. start emacs and look for warnings like `cmake is not installed on your system!`
+	0. install the programs / fonts listed there
 - for the neovim stuff
     - neovim (nightly)
     - ripgrep
@@ -49,21 +52,6 @@ the Homepages of the packages below on [this site](https://search.nixos.org/pack
         - zls
     - dap
         - gdb
-- for the emacs stuff
-	- vterm
-		- cmake
-		- gnumake
-		- libtool
-    - lsp
-        - bash-language-server
-        - cmake-language-server
-        - vscode-langservers-extracted
-        - htmx-lsp
-        - lua-language-server
-        - nixd
-		- marksman
-    - Monocraft
-	- ripgrep
 
 ## Installation
 
