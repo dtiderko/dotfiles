@@ -55,3 +55,7 @@
   (map! :leader
         :desc "Toggle file explorer" "p v" #'grease-toggle)
   )
+
+(after! projectile
+  (setq projectile-project-search-path '(("~/" . 1)
+                                         ("~/Projects" . 2))))
