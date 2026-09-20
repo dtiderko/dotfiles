@@ -13,6 +13,18 @@ for dir in *; do
 done
 cd ..
 
+# install doom emacs
+if [ ! -d $HOME/.config/emacs ]; then
+    echo "Installing doom emacs..."
+    DOOMDIR=$HOME/.config/doom
+    git clone https://github.com/doomemacs/core $HOME/.config/emacs
+    $HOME/.config/emacs/bin/doom install
+    UNINSTALL_SCRIPT="$UNINSTALL_SCRIPT; rm -rf $HOME/.config/emacs"
+else
+    echo "The $HOME/.config/emacs directory already exists. Assuming doom emacs is installed there."
+    echo "Delete that folder, run the uninstall script and run this script again to install doom emacs."
+fi
+
 # some bash stuff to add
 cat << 'EOF' >> ~/.dotfiles_bashrc
 # import nix commands if they exist
@@ -41,6 +53,8 @@ PATH=$PATH:$HOME/.local/bin
 
 # add doom emacs cmd
 PATH=$PATH:$HOME/.config/emacs/bin
+# and explicitly set doom dir
+DOOMDIR=$HOME/.config/doom
 EOF
 if [ ! -f ~/.bashrc ]; then touch ~/.bashrc; fi
 echo ". \$HOME/.dotfiles_bashrc" >> ~/.bashrc
