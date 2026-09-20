@@ -48,7 +48,7 @@
 
 > To execute this script you **have to be in the same directory** as the script.
 
-Before running the script, note that it will DELETE your `/etc/nixos/` and
+Before running the script, note that it will DELETE your
 `~/.config/[folder matching the one in this repos config/ dir]/` files. Therefore,
 back up your files!
 
