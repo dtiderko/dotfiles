@@ -48,3 +48,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package! grease
+  :config
+  (setq grease-show-hidden t)
+  (map! :leader
+        :desc "Toggle file explorer" "p v" #'grease-toggle)
+  )
