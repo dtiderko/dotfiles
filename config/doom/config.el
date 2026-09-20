@@ -16,6 +16,10 @@
 (setq doom-font "Monocraft")
 (setq doom-theme '(doom-gruvbox . doom-gruvbox-light))
 
+;; transparent background before and after load
+(add-to-list 'default-frame-alist '(alpha-background . 80))
+(set-frame-parameter nil 'alpha-background 85)
+
 (setq display-line-numbers-type 'relative)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
