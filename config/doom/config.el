@@ -12,7 +12,10 @@
 ;;   presentations or streaming.
 ;; - `doom-symbol-font' -- for symbols
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
+
+
+(setq confirm-kill-emacs nil)
+
 (setq doom-font "Monocraft")
 (setq doom-theme '(doom-gruvbox . doom-gruvbox-light))
 
